@@ -253,4 +253,126 @@ class Filter{
         return birds
     }
     
+    class func filterTagByIndex(birdIndex:Int) -> BirdTag{
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "BirdTag")
+        var birdTags = [BirdTag]()
+        var birdTag = BirdTag()
+        let indexPredicate = NSPredicate(format:"birdIndex = %@", NSNumber(value: Int16(birdIndex)))
+        request.predicate = indexPredicate
+        
+        do {
+            birdTags = try context.fetch(request) as! [BirdTag]
+        }
+        catch {
+            print("Fetching Failed")
+        }
+        if !birdTags.isEmpty{
+            return birdTags[0]
+        }else{
+            return birdTag
+        }
+    }
+    
+    
+    class func loadTagCsv() -> URL{
+        var content = ""
+        //create file
+        let fileName = "Test2"
+        let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("csv")
+        
+        // check file has content or not
+        var readString = ""
+        do {
+            readString = try String(contentsOf: fileURL)
+        } catch {
+            print("fail to read")
+            //read data from build in csv
+            if let path = Bundle.main.path(forResource: "birdLogVersion1", ofType: "csv"){
+                do {
+                    content = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
+                }catch{
+                    
+                }
+            }
+            
+            do {
+                try content.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+            }catch{
+                print("fail to write")
+            }
+        }
+        
+        return fileURL
+    }
+    
+    class func writeTagToCSV(){
+        // fetch all bird tags
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        var tags = [BirdTag]()
+        do {
+            tags = try context.fetch(BirdTag.fetchRequest())
+        }
+        catch {
+            print("Fetching Failed")
+        }
+        
+        // find the file which stores tag info
+        let fileURL = loadTagCsv()
+        
+        // read info from core data
+        var content = "id,seen\n"
+        for tag in tags{
+            if tag.birdIndex != tags.last?.birdIndex{
+                let line = "\(tag.birdIndex),\(tag.isSeen)\n"
+                content = content + line
+            }else{
+                let lastLine = "\(tag.birdIndex),\(tag.isSeen)"
+                content = content + lastLine
+            }
+        }
+        
+        if content != "id,seen\n"{
+            do {
+                try content.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+            }catch{
+                print("fail to write")
+            }
+        }
+    }
+    
+    class func readTaggedBird() -> [Bird]{
+        var ids = [Int16]()
+        var birds = [Bird]()
+        //fetch tags
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        var tags = [BirdTag]()
+        do {
+            tags = try context.fetch(BirdTag.fetchRequest())
+        }
+        catch {
+            print("Fetching Failed")
+        }
+        //put tags in an arrayList
+        for tag in tags{
+            if tag.isSeen == 1 {
+                ids.append(Int16(tag.birdIndex))
+            }
+        }
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Bird")
+        let indexPredicate = NSPredicate(format:"index IN %@", ids)
+        request.predicate = indexPredicate
+        
+        do {
+            birds = try context.fetch(request) as! [Bird]
+        }
+        catch {
+            print("Fetching Failed")
+        }
+        
+        return birds
+    }
+    
 }

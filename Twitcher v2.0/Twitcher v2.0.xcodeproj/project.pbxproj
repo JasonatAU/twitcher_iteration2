@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751474CB1EB34A400042BBDA /* birdListVersion6.csv in Resources */ = {isa = PBXBuildFile; fileRef = 751474CA1EB34A400042BBDA /* birdListVersion6.csv */; };
+		751474CD1EB373AD0042BBDA /* birdLogVersion1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 751474CC1EB373AD0042BBDA /* birdLogVersion1.csv */; };
+		751474CF1EB384350042BBDA /* csvTest.csv in Resources */ = {isa = PBXBuildFile; fileRef = 751474CE1EB384350042BBDA /* csvTest.csv */; };
+		751474D11EB392B70042BBDA /* csvTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 751474D01EB392B70042BBDA /* csvTest.txt */; };
 		752646E01EA6D64E001344DB /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752646DF1EA6D64E001344DB /* SearchDetailViewController.swift */; };
 		7528C57B1E9A0A98000E71CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528C57A1E9A0A98000E71CF /* AppDelegate.swift */; };
 		7528C57D1E9A0A98000E71CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528C57C1E9A0A98000E71CF /* ViewController.swift */; };
@@ -270,6 +274,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		751474CA1EB34A400042BBDA /* birdListVersion6.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = birdListVersion6.csv; sourceTree = "<group>"; };
+		751474CC1EB373AD0042BBDA /* birdLogVersion1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = birdLogVersion1.csv; sourceTree = "<group>"; };
+		751474CE1EB384350042BBDA /* csvTest.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = csvTest.csv; sourceTree = "<group>"; };
+		751474D01EB392B70042BBDA /* csvTest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = csvTest.txt; sourceTree = "<group>"; };
 		752646DF1EA6D64E001344DB /* SearchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		7528C5771E9A0A98000E71CF /* Twitcher v2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitcher v2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7528C57A1E9A0A98000E71CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -573,6 +581,10 @@
 				759FFD471EAC2EA60072B16C /* voice */,
 				7592DED01E9CB8610077B9AF /* CSVParser */,
 				759FFEFC1EAC6CF80072B16C /* birdListVersion3.csv */,
+				751474CA1EB34A400042BBDA /* birdListVersion6.csv */,
+				751474CC1EB373AD0042BBDA /* birdLogVersion1.csv */,
+				751474CE1EB384350042BBDA /* csvTest.csv */,
+				751474D01EB392B70042BBDA /* csvTest.txt */,
 				7528C57E1E9A0A98000E71CF /* Main.storyboard */,
 				7528C5861E9A0A98000E71CF /* LaunchScreen.storyboard */,
 				7528C5811E9A0A98000E71CF /* Twitcher_v2_0.xcdatamodeld */,
@@ -1009,6 +1021,7 @@
 				759FFE361EAC4AB40072B16C /* 316.mp3 in Resources */,
 				759FFE701EAC4AD20072B16C /* 360.mp3 in Resources */,
 				759FFDCB1EAC4A950072B16C /* 130.mp3 in Resources */,
+				751474D11EB392B70042BBDA /* csvTest.txt in Resources */,
 				759FFEE51EAC4AE50072B16C /* 808.mp3 in Resources */,
 				759FFEED1EAC4AE50072B16C /* 850.mp3 in Resources */,
 				759FFDCE1EAC4A950072B16C /* 136.mp3 in Resources */,
@@ -1032,9 +1045,11 @@
 				759FFDE21EAC4A950072B16C /* 187.mp3 in Resources */,
 				759FFEC81EAC4AE50072B16C /* 438.mp3 in Resources */,
 				7528C5851E9A0A98000E71CF /* Assets.xcassets in Resources */,
+				751474CB1EB34A400042BBDA /* birdListVersion6.csv in Resources */,
 				759FFEE81EAC4AE50072B16C /* 833.mp3 in Resources */,
 				759FFDE71EAC4A950072B16C /* 194.mp3 in Resources */,
 				759FFDEE1EAC4A950072B16C /* 204.mp3 in Resources */,
+				751474CF1EB384350042BBDA /* csvTest.csv in Resources */,
 				759FFE271EAC4AB40072B16C /* 265.mp3 in Resources */,
 				759FFE1F1EAC4AB40072B16C /* 230.mp3 in Resources */,
 				759FFEC01EAC4AE50072B16C /* 414.mp3 in Resources */,
@@ -1120,6 +1135,7 @@
 				759FFE721EAC4AD20072B16C /* 362.mp3 in Resources */,
 				759FFECD1EAC4AE50072B16C /* 490.mp3 in Resources */,
 				759FFD811EAC4A7D0072B16C /* 41.mp3 in Resources */,
+				751474CD1EB373AD0042BBDA /* birdLogVersion1.csv in Resources */,
 				759FFDE11EAC4A950072B16C /* 186.mp3 in Resources */,
 				759FFE2F1EAC4AB40072B16C /* 290.mp3 in Resources */,
 				759FFE231EAC4AB40072B16C /* 254.mp3 in Resources */,

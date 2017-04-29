@@ -81,12 +81,8 @@ class SearchBirdViewController: UIViewController, UITableViewDelegate, UITableVi
         let newImage = ImageHandler.resizeImage(image: image, targetSize: CGSize(width:1000, height:667))
         
         cell.textLabel?.text = bird.commonName
-        //cell.detailTextLabel?.text = bird.scientificName
         cell.imageView?.image = newImage
         cell.imageView?.contentMode = .scaleToFill
-        //cell.imageView?.clipsToBounds = true
-        print(cell.imageView?.image?.size.width)
-        print(cell.imageView?.image?.size.height)
         return cell
     }
     

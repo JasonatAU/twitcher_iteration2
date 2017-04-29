@@ -18,6 +18,7 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pictureScrollView: UIScrollView!
     
 
+    @IBOutlet weak var tagButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var commonNameLabel: UILabel!
     @IBOutlet weak var scientificNameLabel: UILabel!
@@ -53,6 +54,7 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
         pageControl.numberOfPages = imageArray.count
         loadBirdInfo()
         initAVPlayer()
+        initTagButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -150,6 +152,15 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    func initTagButton(){
+        let birdTag = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!))
+        if birdTag.isSeen == 1{
+            tagButton.setTitle("Seen", for: .normal)
+        }else{
+            tagButton.setTitle("Not Seen", for: .normal)
+        }
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = pictureScrollView.contentOffset.x / pictureScrollView.frame.size.width
         //pageControl.numberOfPages = imageArray.count
@@ -159,6 +170,22 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func play(_ sender: UIButton) {
         player.play()
     }
+    
+    @IBAction func tagButtonTapped(_ sender: UIButton) {
+        let birdTag = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!))
+        if birdTag.isSeen == 1{
+            birdTag.isSeen = 0
+            tagButton.setTitle("Not Seen", for: .normal)
+            // write into csv
+            Filter.writeTagToCSV()
+        }else{
+            birdTag.isSeen = 1
+            tagButton.setTitle("Seen", for: .normal)
+            //write into csv
+            Filter.writeTagToCSV()
+        }
+    }
+    
     
 
 }

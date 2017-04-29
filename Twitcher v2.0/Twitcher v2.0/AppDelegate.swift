@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         preloadData()
+        preloadBirdTag()
         // Override point for customization after application launch.
         return true
     }
@@ -81,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if context.hasChanges {
             do {
                 try context.save()
+                print("change has been saved")
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -115,7 +117,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         isInNt:Int,
         isInSa:Int,
         isInTas:Int,
-        isInWa:Int
+        isInWa:Int,
+        isSeen:Int
         )]? {
         
         
@@ -146,17 +149,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var isInSa:Int
             var isInTas:Int
             var isInWa:Int
+            var isSeen:Int
             
             
             
             //test the new CSV parser
-            if let path = Bundle.main.path(forResource: "birdListVersion3", ofType: "csv")
+            if let path = Bundle.main.path(forResource: "birdListVersion6", ofType: "csv")
             {
             do {
                 let data = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
                 let csv = CSwiftV(with:data)
                 let rows = csv.rows
-                print(rows.count)
+                //print(rows.count)
                 // get every row in csv
                 for birdInfo in rows {
                     //print(row) // ["first column", "sceond column", "third column"]
@@ -252,54 +256,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     
                     if birdInfo[18] == "1.0"{
-                        isInVic = 1//Int(birdInfo[18])!
+                        isInVic = 1
                     }else{
                         isInVic = 0
                     }
                     
                     if birdInfo[19] == "1.0"{
-                        isInNsw = 1//Int(birdInfo[19])!
+                        isInNsw = 1
                     }else{
                         isInNsw = 0
                     }
                     
                     if birdInfo[20] == "1.0"{
-                        isInQld = 1//Int(birdInfo[20])!
+                        isInQld = 1
                     }else{
                         isInQld = 0
                     }
                     
                     if birdInfo[21] == "1.0"{
-                        isInAct = 1//Int(birdInfo[21])!
+                        isInAct = 1
                     }else{
                         isInAct = 0
                     }
                     
                     if birdInfo[22] == "1.0"{
-                        isInNt = 1//Int(birdInfo[22])!
+                        isInNt = 1
                     }else{
                         isInNt = 0
                     }
                     
                     if birdInfo[23] == "1.0"{
-                        isInSa = 1//Int(birdInfo[23])!
+                        isInSa = 1
                     }else{
                         isInSa = 0
                     }
                     
                     if birdInfo[24] == "1.0"{
-                        isInTas = 1//Int(birdInfo[24])!
+                        isInTas = 1
                     }else{
                         isInTas = 0
                     }
                     
                     if birdInfo[25] == "1.0"{
-                        isInWa = 1//Int(birdInfo[25])!
+                        isInWa = 1
                     }else{
                         isInWa = 0
                     }
                     
-                    let bird = (theIndex:theIndex, commonName:commonName, ScientificName:ScientificName, category:category, order:order, family:family, colour1:colour1, colour2:colour2, colour3:colour3, minLength:minLength, maxLength:maxLength, minWeight:minWeight, maxWeight:maxWeight, birdDescription:birdDescription, diet:diet, isInVic:isInVic, isInNsw:isInNsw, isInQld:isInQld, isInAct:isInAct, isInNt:isInNt, isInSa:isInSa, isInTas:isInTas, isInWa:isInWa)
+                    if birdInfo[26] == "1.0"{
+                        isSeen = 1
+                    }else{
+                        isSeen = 0
+                    }
+                    
+                    let bird = (theIndex:theIndex, commonName:commonName, ScientificName:ScientificName, category:category, order:order, family:family, colour1:colour1, colour2:colour2, colour3:colour3, minLength:minLength, maxLength:maxLength, minWeight:minWeight, maxWeight:maxWeight, birdDescription:birdDescription, diet:diet, isInVic:isInVic, isInNsw:isInNsw, isInQld:isInQld, isInAct:isInAct, isInNt:isInNt, isInSa:isInSa, isInTas:isInTas, isInWa:isInWa, isSeen:isSeen)
                     
                     arrayBirds.add(from: bird)
                 }
@@ -314,7 +324,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             }
 
-            return (arrayBirds as! [(theIndex: Int, commonName: String, ScientificName: String, category: String, order: String, family: String, colour1: String, colour2: String, colour3: String, minLength: Int, maxLength: Int, minWeight:Int, maxWeight:Int, birdDescription: String, diet: String, isInVic: Int, isInNsw: Int, isInQld: Int, isInAct: Int, isInNt: Int, isInSa: Int, isInTas: Int, isInWa: Int)])
+            return (arrayBirds as! [(theIndex: Int, commonName: String, ScientificName: String, category: String, order: String, family: String, colour1: String, colour2: String, colour3: String, minLength: Int, maxLength: Int, minWeight:Int, maxWeight:Int, birdDescription: String, diet: String, isInVic: Int, isInNsw: Int, isInQld: Int, isInAct: Int, isInNt: Int, isInSa: Int, isInTas: Int, isInWa: Int, isSeen: Int)])
     }
     
     //MARK: - Remove all data in core data
@@ -371,6 +381,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             newBird.isInSa = Int16(rawBird.isInSa)
             newBird.isInTas = Int16(rawBird.isInTas)
             newBird.isInWa = Int16(rawBird.isInWa)
+            newBird.isSeen = Int16(rawBird.isSeen)
             
             var location = ""
             if rawBird.isInVic == 1{
@@ -399,5 +410,71 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             newBird.colour2 = location
         }
+    }
+    
+    func preloadBirdTag(){
+        removeBirdTag()
+        var rawBirdTags = readBirdTag()
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        for rawBirdTag in rawBirdTags{
+            
+            let newBirdTag = NSEntityDescription.insertNewObject(forEntityName: "BirdTag", into: context) as! BirdTag
+            newBirdTag.birdIndex = Int16(rawBirdTag.birdTagIndex)
+            newBirdTag.isSeen = Int16(rawBirdTag.isSeen)
+        }
+    }
+    
+    func removeBirdTag(){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        var birdTags = [BirdTag]()
+        do {
+            birdTags = try context.fetch(BirdTag.fetchRequest())
+        }
+        catch{
+            print("Fetching Failed")
+        }
+        
+        if !birdTags.isEmpty {
+            for birdTag in birdTags {
+                context.delete(birdTag)
+            }
+        }
+    }
+    
+    func readBirdTag() -> [(birdTagIndex:Int, isSeen:Int)]{
+        var birdTagIndex:Int
+        var isSeen:Int
+        var arrayBirdTags = NSMutableArray()
+        
+        //if let path = Bundle.main.path(forResource: "birdLogVersion1", ofType: "csv")
+        if let path:String? = Filter.loadTagCsv().path
+        {
+            do {
+                let data = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+                let csv = CSwiftV(with:data)
+                let rows = csv.rows
+                print(rows)
+                print(rows.count)
+                // get every row in csv
+                for tagInfo in rows {
+                    birdTagIndex = Int(tagInfo[0])!
+                    if tagInfo[1] == "1" || tagInfo[1] == "1.0"{
+                        isSeen = 1
+                    }else{
+                        isSeen = 0
+                    }
+                    let birdTag = (birdTagIndex:birdTagIndex,isSeen:isSeen)
+                    arrayBirdTags.add(from: birdTag)
+                }
+            }catch{
+                // error handling
+            }
+        }
+        return arrayBirdTags as! [(birdTagIndex:Int, isSeen:Int)]
+    }
+    
+    func writeBirdTag(){
+        
     }
 }
