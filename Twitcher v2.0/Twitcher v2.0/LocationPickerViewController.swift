@@ -20,6 +20,10 @@ class LocationPickerViewController: UIViewController {
     @IBOutlet weak var vicButton: UIButton!
     @IBOutlet weak var waButton: UIButton!
     
+    var screenWidth = CGFloat()
+    var screenHeight = CGFloat()
+    var diameter = CGFloat()
+    
     var options = [String]()
     var size = ""
     var locations = [String]()
@@ -29,6 +33,17 @@ class LocationPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Location"
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        diameter = screenWidth*0.25
+        if screenHeight/screenWidth < 1.5{
+            initButtonsForIpad()
+        }else{
+            initButtons()
+        }
+        
         initButtons()
         updateBirdNumbers()
     }
@@ -78,13 +93,74 @@ class LocationPickerViewController: UIViewController {
     
     func initButtons(){
         actButton.backgroundColor = notSelectedButtonColour
+        actButton.frame = CGRect(x: actButton.frame.origin.x, y: actButton.frame.origin.y, width: diameter, height: diameter)
+        makeCircle(button: actButton)
+        
         nswButton.backgroundColor = notSelectedButtonColour
+        nswButton.frame = CGRect(x: nswButton.frame.origin.x, y: nswButton.frame.origin.y, width: diameter, height: diameter)
+        makeCircle(button: nswButton)
+        
         ntButton.backgroundColor = notSelectedButtonColour
+        ntButton.frame = CGRect(x: ntButton.frame.origin.x, y: ntButton.frame.origin.y, width: diameter, height: diameter)
+        makeCircle(button: ntButton)
+        
         qldButton.backgroundColor = notSelectedButtonColour
+        qldButton.frame = CGRect(x: qldButton.frame.origin.x, y: qldButton.frame.origin.y, width: diameter, height: diameter)
+        makeCircle(button: qldButton)
+        
         saButton.backgroundColor = notSelectedButtonColour
+        saButton.frame = CGRect(x: saButton.frame.origin.x, y: saButton.frame.origin.y, width: diameter, height: diameter)
+        makeCircle(button: saButton)
+        
         tasButton.backgroundColor = notSelectedButtonColour
+        tasButton.frame = CGRect(x: tasButton.frame.origin.x, y: tasButton.frame.origin.y, width: diameter, height: diameter)
+        makeCircle(button: tasButton)
+        
         vicButton.backgroundColor = notSelectedButtonColour
+        vicButton.frame = CGRect(x: vicButton.frame.origin.x, y: vicButton.frame.origin.y, width: diameter, height: diameter)
+        makeCircle(button: vicButton)
+        
         waButton.backgroundColor = notSelectedButtonColour
+        waButton.frame = CGRect(x: waButton.frame.origin.x, y: waButton.frame.origin.y, width: diameter, height: diameter)
+        makeCircle(button: waButton)
+    }
+    
+    func initButtonsForIpad(){
+        actButton.backgroundColor = notSelectedButtonColour
+        actButton.frame = CGRect(x: diameter*0.4, y: diameter*1, width: diameter, height: diameter)
+        makeCircle(button: actButton)
+        
+        nswButton.backgroundColor = notSelectedButtonColour
+        nswButton.frame = CGRect(x: diameter*0.4, y: diameter*2.5, width: diameter, height: diameter)
+        makeCircle(button: nswButton)
+        
+        ntButton.backgroundColor = notSelectedButtonColour
+        ntButton.frame = CGRect(x: diameter*0.4, y: diameter*4, width: diameter, height: diameter)
+        makeCircle(button: ntButton)
+        
+        qldButton.backgroundColor = notSelectedButtonColour
+        qldButton.frame = CGRect(x: diameter*1.5, y: diameter*1.8, width: diameter, height: diameter)
+        makeCircle(button: qldButton)
+        
+        saButton.backgroundColor = notSelectedButtonColour
+        saButton.frame = CGRect(x: diameter*1.5, y: diameter*3.2, width: diameter, height: diameter)
+        makeCircle(button: saButton)
+        
+        tasButton.backgroundColor = notSelectedButtonColour
+        tasButton.frame = CGRect(x: diameter*2.5, y: diameter*1, width: diameter, height: diameter)
+        makeCircle(button: tasButton)
+        
+        vicButton.backgroundColor = notSelectedButtonColour
+        vicButton.frame = CGRect(x: diameter*2.5, y: diameter*2.5, width: diameter, height: diameter)
+        makeCircle(button: vicButton)
+        
+        waButton.backgroundColor = notSelectedButtonColour
+        waButton.frame = CGRect(x: diameter*2.5, y: diameter*4, width: diameter, height: diameter)
+        makeCircle(button: waButton)
+    }
+    
+    func makeCircle(button:UIButton){
+        button.layer.cornerRadius = 0.5 * button.bounds.size.width
     }
     
     func updateLocations(button:UIButton, location:String){

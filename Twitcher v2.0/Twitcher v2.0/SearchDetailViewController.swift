@@ -20,6 +20,7 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var tagButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var commonNameLabel: UILabel!
     @IBOutlet weak var scientificNameLabel: UILabel!
     @IBOutlet weak var sizeLabel: UILabel!
@@ -155,9 +156,11 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
     func initTagButton(){
         let birdTag = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!))
         if birdTag.isSeen == 1{
-            tagButton.setTitle("Seen", for: .normal)
+            let seenImage = UIImage(named: "starSolid25")
+            tagButton.setImage(seenImage, for: .normal)
         }else{
-            tagButton.setTitle("Not Seen", for: .normal)
+            let notSeenImage = UIImage(named: "starBlank25")
+            tagButton.setImage(notSeenImage, for: .normal)
         }
     }
     
@@ -171,16 +174,21 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
         player.play()
     }
     
+    @IBAction func pause(_ sender: UIButton) {
+        player.pause()
+    }
     @IBAction func tagButtonTapped(_ sender: UIButton) {
         let birdTag = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!))
         if birdTag.isSeen == 1{
             birdTag.isSeen = 0
-            tagButton.setTitle("Not Seen", for: .normal)
+            let notSeenImage = UIImage(named: "starBlank25")
+            tagButton.setImage(notSeenImage, for: .normal)
             // write into csv
             Filter.writeTagToCSV()
         }else{
             birdTag.isSeen = 1
-            tagButton.setTitle("Seen", for: .normal)
+            let seenImage = UIImage(named: "starSolid25")
+            tagButton.setImage(seenImage, for: .normal)
             //write into csv
             Filter.writeTagToCSV()
         }
