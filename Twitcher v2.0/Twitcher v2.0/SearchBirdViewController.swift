@@ -41,11 +41,13 @@ class SearchBirdViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.reloadData()
         // hide the keyboard
         self.hideKeyboardWhenTappedAround()
-        self.tabBarController?.tabBar.isHidden = true
+        //self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //self.tabBarController?.tabBar.isHidden = false
+        searchBar.text = ""
+        getData()
+        tableView.reloadData()
     }
     
     func searchBarSetup(){
@@ -115,7 +117,7 @@ class SearchBirdViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "cellSegue"
+        if segue.identifier == "searchCellToDetail"
         {
             let controller = segue.destination as! SearchDetailViewController
             if let selectedCell = sender as? UITableViewCell {

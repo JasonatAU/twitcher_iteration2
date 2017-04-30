@@ -22,12 +22,9 @@ class BirdLogViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.title = "Bird Log"
     }
     
-    @IBAction func refresh(_ sender: UIBarButtonItem) {
-        birds = Filter.readTaggedBird()
-        tableView.reloadData()
-    }
     override func viewWillAppear(_ animated: Bool) {
         birds = Filter.readTaggedBird()
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +65,7 @@ class BirdLogViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "logCellToDetail"
+        if segue.identifier == "birdLogCellToDetail"
         {
             let controller = segue.destination as! SearchDetailViewController
             if let selectedCell = sender as? UITableViewCell {

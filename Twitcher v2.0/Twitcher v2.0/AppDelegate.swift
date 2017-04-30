@@ -350,7 +350,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Preload data from file to core data
     func preloadData(){
         removeData()
-        var rawBirds = parseCSV()
+        let rawBirds = parseCSV()
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         for rawBird in rawBirds!{
             
@@ -414,7 +414,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func preloadBirdTag(){
         removeBirdTag()
-        var rawBirdTags = readBirdTag()
+        let rawBirdTags = readBirdTag()
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         for rawBirdTag in rawBirdTags{

@@ -60,6 +60,8 @@ class FilterResultViewController: UIViewController,UITableViewDelegate, UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "filterCellToDetail"
         {
+            //let nav = segue.destination as! UINavigationController
+            //let controller = nav.viewControllers[0] as! SearchDetailViewController
             let controller = segue.destination as! SearchDetailViewController
             controller.bird = bird!
         }
