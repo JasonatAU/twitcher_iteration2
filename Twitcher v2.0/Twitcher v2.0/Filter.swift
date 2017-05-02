@@ -375,4 +375,22 @@ class Filter{
         return birds
     }
     
+    class func captitaliseFirstCharacter(aString:String) -> String{
+        let strings = aString.components(separatedBy: " ")
+        var newStrings = [String]()
+        for var string in strings{
+            
+            let firstChar = String(string[string.startIndex]).uppercased()
+            let others = String(string.characters.dropFirst())
+            
+            let newString = firstChar + others
+            newStrings.append(newString)
+        }
+        var result = ""
+        for s in newStrings{
+            result = result + s + " "
+        }
+        return result
+    }
+    
 }

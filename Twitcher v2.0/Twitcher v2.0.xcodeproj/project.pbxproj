@@ -12,6 +12,9 @@
 		751474CF1EB384350042BBDA /* csvTest.csv in Resources */ = {isa = PBXBuildFile; fileRef = 751474CE1EB384350042BBDA /* csvTest.csv */; };
 		751474D11EB392B70042BBDA /* csvTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 751474D01EB392B70042BBDA /* csvTest.txt */; };
 		751475141EB46B6E0042BBDA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751475131EB46B6E0042BBDA /* HomeViewController.swift */; };
+		751475161EB76FAD0042BBDA /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751475151EB76FAD0042BBDA /* PickerViewController.swift */; };
+		751475181EB80EE90042BBDA /* BlankToColourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751475171EB80EE90042BBDA /* BlankToColourViewController.swift */; };
+		7514751A1EB8124B0042BBDA /* BirdLogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751475191EB8124B0042BBDA /* BirdLogDetailViewController.swift */; };
 		752646E01EA6D64E001344DB /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752646DF1EA6D64E001344DB /* SearchDetailViewController.swift */; };
 		7528C57B1E9A0A98000E71CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528C57A1E9A0A98000E71CF /* AppDelegate.swift */; };
 		7528C57D1E9A0A98000E71CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528C57C1E9A0A98000E71CF /* ViewController.swift */; };
@@ -280,6 +283,9 @@
 		751474CE1EB384350042BBDA /* csvTest.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = csvTest.csv; sourceTree = "<group>"; };
 		751474D01EB392B70042BBDA /* csvTest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = csvTest.txt; sourceTree = "<group>"; };
 		751475131EB46B6E0042BBDA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		751475151EB76FAD0042BBDA /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		751475171EB80EE90042BBDA /* BlankToColourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankToColourViewController.swift; sourceTree = "<group>"; };
+		751475191EB8124B0042BBDA /* BirdLogDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdLogDetailViewController.swift; sourceTree = "<group>"; };
 		752646DF1EA6D64E001344DB /* SearchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		7528C5771E9A0A98000E71CF /* Twitcher v2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitcher v2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7528C57A1E9A0A98000E71CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -611,6 +617,9 @@
 				759FFD421EAB9ECC0072B16C /* MediumPictureTableViewCell.xib */,
 				759FFD451EAC220C0072B16C /* ImageHandler.swift */,
 				751475131EB46B6E0042BBDA /* HomeViewController.swift */,
+				751475151EB76FAD0042BBDA /* PickerViewController.swift */,
+				751475171EB80EE90042BBDA /* BlankToColourViewController.swift */,
+				751475191EB8124B0042BBDA /* BirdLogDetailViewController.swift */,
 			);
 			path = "Twitcher v2.0";
 			sourceTree = "<group>";
@@ -1228,6 +1237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				759FFD3A1EAB12A20072B16C /* SearchViewController.swift in Sources */,
+				751475181EB80EE90042BBDA /* BlankToColourViewController.swift in Sources */,
 				759FFD2C1EA89F960072B16C /* ColourPickerViewController.swift in Sources */,
 				751475141EB46B6E0042BBDA /* HomeViewController.swift in Sources */,
 				752646E01EA6D64E001344DB /* SearchDetailViewController.swift in Sources */,
@@ -1237,6 +1247,8 @@
 				759FFD3F1EAB9EB40072B16C /* LargePictureTableViewCell.swift in Sources */,
 				7528C57D1E9A0A98000E71CF /* ViewController.swift in Sources */,
 				759FFD301EA89FAF0072B16C /* LocationPickerViewController.swift in Sources */,
+				7514751A1EB8124B0042BBDA /* BirdLogDetailViewController.swift in Sources */,
+				751475161EB76FAD0042BBDA /* PickerViewController.swift in Sources */,
 				7528C57B1E9A0A98000E71CF /* AppDelegate.swift in Sources */,
 				759FFD461EAC220C0072B16C /* ImageHandler.swift in Sources */,
 				759FFD3C1EAB133D0072B16C /* AboutUsViewController.swift in Sources */,

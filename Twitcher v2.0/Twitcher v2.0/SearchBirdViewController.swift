@@ -82,7 +82,7 @@ class SearchBirdViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         let newImage = ImageHandler.resizeImage(image: image, targetSize: CGSize(width:1000, height:667))
         
-        cell.textLabel?.text = bird.commonName
+        cell.textLabel?.text = Filter.captitaliseFirstCharacter(aString: bird.commonName!)
         cell.imageView?.image = newImage
         cell.imageView?.contentMode = .scaleToFill
         return cell

@@ -19,6 +19,11 @@ class FilterResultViewController: UIViewController,UITableViewDelegate, UITableV
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        if birds.count == 1{
+            performSegue(withIdentifier: "filterCellToDetail", sender: birds[0])
+        }
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,7 +48,7 @@ class FilterResultViewController: UIViewController,UITableViewDelegate, UITableV
         }
         let cell = Bundle.main.loadNibNamed("LargePictureTableViewCell", owner: self, options: nil)?.first as! LargePictureTableViewCell
         cell.mianImageView.image = image
-        cell.mainLabel.text = bird.commonName
+        cell.mainLabel.text = Filter.captitaliseFirstCharacter(aString: bird.commonName!)
         
         return cell
     }
@@ -62,8 +67,14 @@ class FilterResultViewController: UIViewController,UITableViewDelegate, UITableV
         {
             //let nav = segue.destination as! UINavigationController
             //let controller = nav.viewControllers[0] as! SearchDetailViewController
-            let controller = segue.destination as! SearchDetailViewController
-            controller.bird = bird!
+            
+            if let oneBird = sender as? Bird{
+                let controller = segue.destination as! SearchDetailViewController
+                controller.bird = oneBird
+            }else{
+                let controller = segue.destination as! SearchDetailViewController
+                controller.bird = bird!
+            }
         }
     }
     

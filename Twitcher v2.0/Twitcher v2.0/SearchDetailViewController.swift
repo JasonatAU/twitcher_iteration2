@@ -70,7 +70,7 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
             imageView.image = imageArray[j]
             imageView.contentMode = .scaleToFill
             let xPosition = self.view.frame.width * CGFloat(j)
-            imageView.frame = CGRect(x: xPosition, y: 0, width: self.pictureScrollView.frame.width, height: 280)//self.pictureScrollView.frame.height)
+            imageView.frame = CGRect(x: xPosition, y: 0, width: self.pictureScrollView.frame.width, height: 250)//self.pictureScrollView.frame.height)
             
             pictureScrollView.contentSize.width = pictureScrollView.frame.width * CGFloat( j + 1)
             pictureScrollView.addSubview(imageView)
@@ -101,8 +101,8 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func loadBirdInfo(){
-        commonNameLabel.text = bird!.commonName
-        scientificNameLabel.text = bird!.scientificName
+        commonNameLabel.text = Filter.captitaliseFirstCharacter(aString: bird!.commonName!)
+        scientificNameLabel.text = Filter.captitaliseFirstCharacter(aString: bird!.scientificName!)
         sizeLabel.text = "Size"
         if bird!.minLength != 0{
             minLengthLabel.text = "Min Length: \(bird!.minLength) cm"
