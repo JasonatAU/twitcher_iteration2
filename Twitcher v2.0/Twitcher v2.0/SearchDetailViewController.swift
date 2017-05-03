@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import CoreData
 import AVFoundation
+import CoreLocation
+import MapKit
 
-class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
+class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerDelegate {
 
     var bird:Bird? = nil
     var player:AVAudioPlayer = AVAudioPlayer()
-    
+    var latitude = 0.0
+    var longitude = 0.0
     
     @IBOutlet weak var pictureScrollView: UIScrollView!
     
@@ -44,11 +48,18 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
-    
+    let manager = CLLocationManager()
     var imageArray = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // core location manager
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
         pictureScrollView.delegate = self
         loadBIrd()
         addPicturesToScrollView()
@@ -154,14 +165,8 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func initTagButton(){
-        let birdTag = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!))
-        if birdTag.isSeen == 1{
-            let seenImage = UIImage(named: "starSolid25")
-            tagButton.setImage(seenImage, for: .normal)
-        }else{
-            let notSeenImage = UIImage(named: "starBlank25")
-            tagButton.setImage(notSeenImage, for: .normal)
-        }
+        let birdTags = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!))
+        tagButton.setTitle("\(birdTags.count) Times", for: .normal)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -178,22 +183,44 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate {
         player.pause()
     }
     @IBAction func tagButtonTapped(_ sender: UIButton) {
-        let birdTag = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!))
-        if birdTag.isSeen == 1{
-            birdTag.isSeen = 0
-            let notSeenImage = UIImage(named: "starBlank25")
-            tagButton.setImage(notSeenImage, for: .normal)
-            // write into csv
-            Filter.writeTagToCSV()
-        }else{
-            birdTag.isSeen = 1
-            let seenImage = UIImage(named: "starSolid25")
-            tagButton.setImage(seenImage, for: .normal)
-            //write into csv
-            Filter.writeTagToCSV()
-        }
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let newBirdTag = NSEntityDescription.insertNewObject(forEntityName: "BirdTag", into: context) as! BirdTag
+        newBirdTag.birdIndex = (bird?.index)!
+        newBirdTag.isSeen = 1
+        newBirdTag.latitude = latitude
+        newBirdTag.longitude = longitude
+        newBirdTag.date = Filter.getDate()
+        
+        let birdTags = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!))
+        tagButton.setTitle("\(birdTags.count) Times", for: .normal)
+        Filter.writeTagToCSV()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations[0]
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region:MKCoordinateRegion = MKCoordinateRegion(center: myLocation, span: span)
+        
+        latitude = location.coordinate.latitude
+        longitude = location.coordinate.longitude
+        
     }
     
     
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

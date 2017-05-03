@@ -52,6 +52,13 @@ class SearchBirdViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func searchBarSetup(){
         searchBar.delegate = self
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        getData()
+        self.tableView.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
@@ -90,8 +97,12 @@ class SearchBirdViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func getData(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Bird")
+        let sortDescriptor = NSSortDescriptor(key: "commonName", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
+        
         do {
-            birds = try context.fetch(Bird.fetchRequest())
+            birds = try context.fetch(request) as! [Bird]
             print(birds.count)
         }
         catch {
@@ -102,6 +113,8 @@ class SearchBirdViewController: UIViewController, UITableViewDelegate, UITableVi
     func searchByKeyWord(keyWord: String){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Bird")
+        let sortDescriptor = NSSortDescriptor(key: "commonName", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
         let commonNamePredicate = NSPredicate(format:"commonName contains %@", keyWord.lowercased())
         let scientificNamePredicate = NSPredicate(format:"scientificName contains %@", keyWord.lowercased())
         let predicate = NSCompoundPredicate(type: .or, subpredicates: [commonNamePredicate, scientificNamePredicate])

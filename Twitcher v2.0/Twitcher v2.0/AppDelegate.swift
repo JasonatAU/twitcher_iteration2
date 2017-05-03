@@ -422,6 +422,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let newBirdTag = NSEntityDescription.insertNewObject(forEntityName: "BirdTag", into: context) as! BirdTag
             newBirdTag.birdIndex = Int16(rawBirdTag.birdTagIndex)
             newBirdTag.isSeen = Int16(rawBirdTag.isSeen)
+            newBirdTag.latitude = rawBirdTag.latitude
+            newBirdTag.longitude = rawBirdTag.longitude
+            newBirdTag.date = rawBirdTag.date
         }
     }
     
@@ -442,9 +445,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func readBirdTag() -> [(birdTagIndex:Int, isSeen:Int)]{
+    func readBirdTag() -> [(birdTagIndex:Int, isSeen:Int, latitude:Double, longitude:Double, date:String)]{
         var birdTagIndex:Int
         var isSeen:Int
+        var latitude:Double
+        var longitude:Double
+        var date:String
         var arrayBirdTags = NSMutableArray()
         
         //if let path = Bundle.main.path(forResource: "birdLogVersion1", ofType: "csv")
@@ -464,14 +470,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }else{
                         isSeen = 0
                     }
-                    let birdTag = (birdTagIndex:birdTagIndex,isSeen:isSeen)
+                    latitude = Double(tagInfo[2])!
+                    longitude = Double(tagInfo[3])!
+                    date = tagInfo[4]
+                    let birdTag = (birdTagIndex:birdTagIndex,isSeen:isSeen,latitude:latitude,longitude:longitude,date:date)
                     arrayBirdTags.add(from: birdTag)
                 }
             }catch{
                 // error handling
             }
         }
-        return arrayBirdTags as! [(birdTagIndex:Int, isSeen:Int)]
+        return arrayBirdTags as! [(birdTagIndex:Int, isSeen:Int, latitude:Double, longitude:Double, date:String)]
     }
     
     func writeBirdTag(){

@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class SizePickerViewController: UIViewController {
+class SizePickerViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var birdNumbers: UILabel!
     @IBOutlet weak var smallButton: UIButton!
@@ -18,6 +20,8 @@ class SizePickerViewController: UIViewController {
     @IBOutlet weak var doNotKnowButton: UIButton!
     @IBOutlet weak var likeWhatLabel: UILabel!
     
+    var autoLocation = ""
+    let manager = CLLocationManager()
     var screenWidth = CGFloat()
     var screenHeight = CGFloat()
     var diameter = CGFloat()
@@ -31,6 +35,9 @@ class SizePickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        
         let birds = Filter.filter(colours: options, size: size, locations: locations)
         let numbers = birds.count
         if numbers > 1{
@@ -49,6 +56,32 @@ class SizePickerViewController: UIViewController {
             initButtons()
         }
         likeWhatLabel.text = "Just Like a Bird!"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        if autoLocation != ""{
+            manager.stopUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) in
+            
+            if error != nil{
+                manager.stopUpdatingLocation()
+                print("There was an error")
+            }else{
+                if let place = placemarks?[0]{
+                    if let state = place.administrativeArea{
+                        self.autoLocation = state
+                    }
+                    
+                }
+            }
+        })
         
     }
     
@@ -198,6 +231,7 @@ class SizePickerViewController: UIViewController {
             let controller = segue.destination as! LocationPickerViewController
             controller.options = self.options
             controller.size = self.size
+            controller.autoLocation = autoLocation
         }
     }
     

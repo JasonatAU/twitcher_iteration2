@@ -20,6 +20,8 @@ class LocationPickerViewController: UIViewController {
     @IBOutlet weak var vicButton: UIButton!
     @IBOutlet weak var waButton: UIButton!
     
+    
+    var autoLocation = ""
     var screenWidth = CGFloat()
     var screenHeight = CGFloat()
     var diameter = CGFloat()
@@ -33,7 +35,6 @@ class LocationPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Location"
-        
         let screenSize: CGRect = UIScreen.main.bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
@@ -43,9 +44,35 @@ class LocationPickerViewController: UIViewController {
         }else{
             initButtons()
         }
-        
         initButtons()
+        initLocation()
         updateBirdNumbers()
+    }
+    
+    func initLocation(){
+        
+        switch autoLocation.uppercased() {
+        case "ACT":
+            updateLocations(button: vicButton, location: "act")
+        case "NSW":
+            updateLocations(button: vicButton, location: "nsw")
+        case "NT":
+            updateLocations(button: vicButton, location: "nt")
+        case "QLD":
+            updateLocations(button: vicButton, location: "qld")
+        case "SA":
+            updateLocations(button: vicButton, location: "sa")
+        case "TAS":
+            updateLocations(button: vicButton, location: "tas")
+        case "VIC":
+            updateLocations(button: vicButton, location: "vic")
+        case "WA":
+            updateLocations(button: vicButton, location: "wa")
+        default:
+            print("")
+        }
+        print("autoLocation: \(autoLocation)")
+        
     }
     
     func updateBirdNumbers(){

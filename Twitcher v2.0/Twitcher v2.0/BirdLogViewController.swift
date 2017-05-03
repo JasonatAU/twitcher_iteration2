@@ -59,6 +59,7 @@ class BirdLogViewController: UIViewController, UITableViewDelegate, UITableViewD
         let newImage = ImageHandler.resizeImage(image: image, targetSize: CGSize(width:1000, height:667))
         
         cell.textLabel?.text = Filter.captitaliseFirstCharacter(aString: bird.commonName!)
+        cell.detailTextLabel?.text = "\(Filter.filterTagByIndex(birdIndex: Int(bird.index)).count) Tags"
         cell.imageView?.image = newImage
         cell.imageView?.contentMode = .scaleToFill
         return cell
@@ -67,7 +68,7 @@ class BirdLogViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "birdLogCellToDetail"
         {
-            let controller = segue.destination as! SearchDetailViewController
+            let controller = segue.destination as! BirdLogDetailViewController
             if let selectedCell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPath(for: selectedCell)!
                 let selectedItem = indexPath.row
@@ -76,5 +77,4 @@ class BirdLogViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         }
     }
-    
 }

@@ -15,6 +15,10 @@
 		751475161EB76FAD0042BBDA /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751475151EB76FAD0042BBDA /* PickerViewController.swift */; };
 		751475181EB80EE90042BBDA /* BlankToColourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751475171EB80EE90042BBDA /* BlankToColourViewController.swift */; };
 		7514751A1EB8124B0042BBDA /* BirdLogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751475191EB8124B0042BBDA /* BirdLogDetailViewController.swift */; };
+		7514751C1EB85A860042BBDA /* birdLogVersion2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7514751B1EB85A860042BBDA /* birdLogVersion2.csv */; };
+		7514751E1EB866690042BBDA /* birdLogVersion3.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7514751D1EB866690042BBDA /* birdLogVersion3.csv */; };
+		751475201EB8B98F0042BBDA /* BirdTagDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7514751F1EB8B98F0042BBDA /* BirdTagDetailViewController.swift */; };
+		751475231EB8BBDB0042BBDA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751475221EB8BBDB0042BBDA /* CoreLocation.framework */; };
 		752646E01EA6D64E001344DB /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752646DF1EA6D64E001344DB /* SearchDetailViewController.swift */; };
 		7528C57B1E9A0A98000E71CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528C57A1E9A0A98000E71CF /* AppDelegate.swift */; };
 		7528C57D1E9A0A98000E71CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528C57C1E9A0A98000E71CF /* ViewController.swift */; };
@@ -286,6 +290,10 @@
 		751475151EB76FAD0042BBDA /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		751475171EB80EE90042BBDA /* BlankToColourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankToColourViewController.swift; sourceTree = "<group>"; };
 		751475191EB8124B0042BBDA /* BirdLogDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdLogDetailViewController.swift; sourceTree = "<group>"; };
+		7514751B1EB85A860042BBDA /* birdLogVersion2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = birdLogVersion2.csv; sourceTree = "<group>"; };
+		7514751D1EB866690042BBDA /* birdLogVersion3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = birdLogVersion3.csv; sourceTree = "<group>"; };
+		7514751F1EB8B98F0042BBDA /* BirdTagDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdTagDetailViewController.swift; sourceTree = "<group>"; };
+		751475221EB8BBDB0042BBDA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		752646DF1EA6D64E001344DB /* SearchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		7528C5771E9A0A98000E71CF /* Twitcher v2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitcher v2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7528C57A1E9A0A98000E71CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -543,6 +551,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751475231EB8BBDB0042BBDA /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +572,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		751475211EB8BBDA0042BBDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				751475221EB8BBDB0042BBDA /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7528C56E1E9A0A98000E71CF = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +587,7 @@
 				7528C5911E9A0A98000E71CF /* Twitcher v2.0Tests */,
 				7528C59C1E9A0A98000E71CF /* Twitcher v2.0UITests */,
 				7528C5781E9A0A98000E71CF /* Products */,
+				751475211EB8BBDA0042BBDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -591,6 +609,8 @@
 				759FFEFC1EAC6CF80072B16C /* birdListVersion3.csv */,
 				751474CA1EB34A400042BBDA /* birdListVersion6.csv */,
 				751474CC1EB373AD0042BBDA /* birdLogVersion1.csv */,
+				7514751B1EB85A860042BBDA /* birdLogVersion2.csv */,
+				7514751D1EB866690042BBDA /* birdLogVersion3.csv */,
 				751474CE1EB384350042BBDA /* csvTest.csv */,
 				751474D01EB392B70042BBDA /* csvTest.txt */,
 				7528C57E1E9A0A98000E71CF /* Main.storyboard */,
@@ -610,6 +630,8 @@
 				759FFD331EAA29310072B16C /* FilterResultViewController.swift */,
 				759FFD311EA8F1230072B16C /* Filter.swift */,
 				759FFD371EAB0F0D0072B16C /* BirdLogViewController.swift */,
+				751475191EB8124B0042BBDA /* BirdLogDetailViewController.swift */,
+				7514751F1EB8B98F0042BBDA /* BirdTagDetailViewController.swift */,
 				759FFD3B1EAB133D0072B16C /* AboutUsViewController.swift */,
 				759FFD3D1EAB9EB40072B16C /* LargePictureTableViewCell.swift */,
 				759FFD3E1EAB9EB40072B16C /* LargePictureTableViewCell.xib */,
@@ -619,7 +641,6 @@
 				751475131EB46B6E0042BBDA /* HomeViewController.swift */,
 				751475151EB76FAD0042BBDA /* PickerViewController.swift */,
 				751475171EB80EE90042BBDA /* BlankToColourViewController.swift */,
-				751475191EB8124B0042BBDA /* BirdLogDetailViewController.swift */,
 			);
 			path = "Twitcher v2.0";
 			sourceTree = "<group>";
@@ -1085,6 +1106,7 @@
 				759FFDC51EAC4A950072B16C /* 116.mp3 in Resources */,
 				759FFE6A1EAC4AD20072B16C /* 350.mp3 in Resources */,
 				759FFED11EAC4AE50072B16C /* 514.mp3 in Resources */,
+				7514751C1EB85A860042BBDA /* birdLogVersion2.csv in Resources */,
 				759FFE821EAC4AD20072B16C /* 405.mp3 in Resources */,
 				759FFE281EAC4AB40072B16C /* 266.mp3 in Resources */,
 				759FFDDB1EAC4A950072B16C /* 179.mp3 in Resources */,
@@ -1192,6 +1214,7 @@
 				759FFEDB1EAC4AE50072B16C /* 745.mp3 in Resources */,
 				759FFEE61EAC4AE50072B16C /* 826.mp3 in Resources */,
 				759FFD8D1EAC4A7D0072B16C /* 70.mp3 in Resources */,
+				7514751E1EB866690042BBDA /* birdLogVersion3.csv in Resources */,
 				759FFD441EAB9ECC0072B16C /* MediumPictureTableViewCell.xib in Resources */,
 				759FFEF51EAC4AE50072B16C /* 887.mp3 in Resources */,
 				759FFE671EAC4AD20072B16C /* 344.mp3 in Resources */,
@@ -1256,6 +1279,7 @@
 				759FFD341EAA29310072B16C /* FilterResultViewController.swift in Sources */,
 				759FFD361EAB09160072B16C /* FilterViewController.swift in Sources */,
 				7528C5831E9A0A98000E71CF /* Twitcher_v2_0.xcdatamodeld in Sources */,
+				751475201EB8B98F0042BBDA /* BirdTagDetailViewController.swift in Sources */,
 				7528C5AC1E9A0F40000E71CF /* SearchBirdViewController.swift in Sources */,
 				759FFD2E1EA89FA30072B16C /* SizePickerViewController.swift in Sources */,
 			);
