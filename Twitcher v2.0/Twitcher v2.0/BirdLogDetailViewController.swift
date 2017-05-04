@@ -13,6 +13,7 @@ class BirdLogDetailViewController: UIViewController, UITableViewDataSource, UITa
     var bird:Bird? = nil
     var birdTags = [BirdTag]()
     
+    @IBOutlet weak var topNavigationBar: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -19,6 +19,7 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
     var latitude = 0.0
     var longitude = 0.0
     
+    @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var pictureScrollView: UIScrollView!
     
 
@@ -46,6 +47,7 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
     
     
     
+    @IBOutlet weak var topNavigationBar: UINavigationItem!
     @IBOutlet weak var pageControl: UIPageControl!
     
     let manager = CLLocationManager()
@@ -67,6 +69,13 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         loadBirdInfo()
         initAVPlayer()
         initTagButton()
+//        if let rectTop = self.tabBarController?.tabBar.frame {
+//            if let rectBot = self.navigationController?.navigationBar.frame {
+//                let y1 = rectTop.size.height + rectTop.origin.y
+//                let y2 = rectBot.origin.y
+//                self.contentScrollView.contentInset = UIEdgeInsetsMake( y1, y2, 0, 0)
+//            }
+//        }
     }
 
     override func didReceiveMemoryWarning() {

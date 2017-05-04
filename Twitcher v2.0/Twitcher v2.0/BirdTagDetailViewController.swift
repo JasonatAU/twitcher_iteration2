@@ -12,6 +12,7 @@ import CoreLocation
 
 class BirdTagDetailViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var topNavigationBar: UINavigationItem!
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var birdNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

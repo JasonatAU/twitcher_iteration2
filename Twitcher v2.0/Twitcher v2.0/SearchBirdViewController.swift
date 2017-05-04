@@ -26,6 +26,7 @@ extension UIViewController {
 
 class SearchBirdViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
+    @IBOutlet weak var topNavigationBar: UINavigationItem!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,6 +43,9 @@ class SearchBirdViewController: UIViewController, UITableViewDelegate, UITableVi
         // hide the keyboard
         self.hideKeyboardWhenTappedAround()
         //self.tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
+        tabBarController?.tabBar.tintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
+        searchBar.barTintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +57,9 @@ class SearchBirdViewController: UIViewController, UITableViewDelegate, UITableVi
     func searchBarSetup(){
         searchBar.delegate = self
         searchBar.setShowsCancelButton(true, animated: true)
+        let cancelButtonAttributes: [String: AnyObject] = [NSForegroundColorAttributeName: UIColor.black]
+        
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

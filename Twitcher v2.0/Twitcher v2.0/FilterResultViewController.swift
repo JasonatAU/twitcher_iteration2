@@ -12,6 +12,7 @@ class FilterResultViewController: UIViewController,UITableViewDelegate, UITableV
 
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topNavigationBar: UINavigationItem!
     
     var birds = [Bird]()
     var bird:Bird? = nil

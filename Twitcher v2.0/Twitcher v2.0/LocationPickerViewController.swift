@@ -19,6 +19,7 @@ class LocationPickerViewController: UIViewController {
     @IBOutlet weak var tasButton: UIButton!
     @IBOutlet weak var vicButton: UIButton!
     @IBOutlet weak var waButton: UIButton!
+    @IBOutlet weak var topNavigationBar: UINavigationItem!
     
     
     var autoLocation = ""

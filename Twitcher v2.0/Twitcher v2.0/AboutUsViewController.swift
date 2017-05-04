@@ -10,9 +10,12 @@ import UIKit
 
 class AboutUsViewController: UIViewController {
 
+    @IBOutlet weak var topNavigationBar: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "About Us"
+        navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
+        tabBarController?.tabBar.tintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
     }
 
     override func didReceiveMemoryWarning() {

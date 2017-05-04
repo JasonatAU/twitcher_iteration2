@@ -19,6 +19,7 @@ class SizePickerViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var hugeButton: UIButton!
     @IBOutlet weak var doNotKnowButton: UIButton!
     @IBOutlet weak var likeWhatLabel: UILabel!
+    @IBOutlet weak var topNavigationBar: UINavigationItem!
     
     var autoLocation = ""
     let manager = CLLocationManager()
