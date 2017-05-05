@@ -10,6 +10,7 @@ import UIKit
 
 class LocationPickerViewController: UIViewController {
 
+    @IBOutlet weak var wereFound: UILabel!
     @IBOutlet weak var birdNumbers: UILabel!
     @IBOutlet weak var actButton: UIButton!
     @IBOutlet weak var nswButton: UIButton!
@@ -43,6 +44,7 @@ class LocationPickerViewController: UIViewController {
         if screenHeight/screenWidth < 1.5{
             initButtonsForIpad()
         }else{
+            diameter = screenWidth*0.2
             initButtons()
         }
         initButtons()
@@ -84,7 +86,13 @@ class LocationPickerViewController: UIViewController {
             }
         }
         let birds = Filter.filter(colours: options, size: size, locations: tempLocation)
-        birdNumbers.text = "\(birds.count) birds were found!"
+        let numbers = birds.count
+        birdNumbers.text = "\(numbers) "
+        if numbers > 1{
+            wereFound.text = "birds were found!"
+        }else{
+            wereFound.text = "bird was found!"
+        }
     }
     
     @IBAction func actButtonTapped(_ sender: UIButton) {

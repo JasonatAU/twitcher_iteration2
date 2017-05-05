@@ -42,7 +42,7 @@ class BirdTagDetailViewController: UIViewController, CLLocationManagerDelegate {
         let annotation = MKPointAnnotation()
         annotation.coordinate.latitude = latitude
         annotation.coordinate.longitude = longitude
-        annotation.title = "\(Filter.aOrAn(name: birdName).uppercased()) \(birdName)!"
+        annotation.title = Filter.captitaliseFirstCharacter(aString: "\(Filter.aOrAn(name: birdName)) \(birdName)!")
         map.addAnnotation(annotation)
         
         CLGeocoder().reverseGeocodeLocation(birdLocation, completionHandler: {(placemarks, error) in

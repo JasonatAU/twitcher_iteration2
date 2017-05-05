@@ -12,6 +12,7 @@ import MapKit
 
 class SizePickerViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var wereFound: UILabel!
     @IBOutlet weak var birdNumbers: UILabel!
     @IBOutlet weak var smallButton: UIButton!
     @IBOutlet weak var mediumButton: UIButton!
@@ -38,14 +39,7 @@ class SizePickerViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        let birds = Filter.filter(colours: options, size: size, locations: locations)
-        let numbers = birds.count
-        if numbers > 1{
-            birdNumbers.text = "\(numbers) birds were found!"
-        }else{
-            birdNumbers.text = "\(numbers) bird were found!"
-        }
+        updateNumbers()
         self.title = "Size"
         let screenSize: CGRect = UIScreen.main.bounds
         screenWidth = screenSize.width
@@ -179,10 +173,11 @@ class SizePickerViewController: UIViewController, CLLocationManagerDelegate {
     func updateNumbers(){
         let birds = Filter.filter(colours: options, size: size, locations: locations)
         let numbers = birds.count
+        birdNumbers.text = "\(numbers) "
         if numbers > 1{
-            birdNumbers.text = "\(numbers) birds were found!"
+            wereFound.text = "birds were found!"
         }else{
-            birdNumbers.text = "\(numbers) bird were found!"
+            wereFound.text = "bird was found!"
         }
     }
     

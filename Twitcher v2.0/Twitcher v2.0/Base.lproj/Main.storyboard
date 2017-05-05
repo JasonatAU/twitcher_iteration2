@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4S-1C-d2Z">
-                                <rect key="frame" x="53" y="184" width="71" height="57"/>
+                                <rect key="frame" x="46" y="222" width="71" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="blue">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2OK-a9-Fce">
-                                <rect key="frame" x="280" y="197" width="43" height="30"/>
+                                <rect key="frame" x="286" y="213" width="43" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="brown"/>
                                 <connections>
@@ -41,35 +41,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2OM-xg-ESU">
-                                <rect key="frame" x="175" y="197" width="37" height="30"/>
+                                <rect key="frame" x="169" y="213" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="black"/>
                                 <connections>
                                     <action selector="blackButtonTapped:" destination="BLm-Ee-0nZ" eventType="touchUpInside" id="Gcl-64-1Eq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Eg-VQ-NXg">
-                                <rect key="frame" x="103" y="285" width="61" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="chestnut"/>
-                                <connections>
-                                    <action selector="chestnutButtonTapped:" destination="BLm-Ee-0nZ" eventType="touchUpInside" id="4rn-Gq-CSW"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b81-rp-625">
-                                <rect key="frame" x="233" y="285" width="40" height="30"/>
+                                <rect key="frame" x="228" y="298" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="green"/>
                                 <connections>
                                     <action selector="greenButtonTapped:" destination="BLm-Ee-0nZ" eventType="touchUpInside" id="YWk-oW-OOT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBS-aK-9bc">
-                                <rect key="frame" x="60" y="386" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="grey"/>
-                                <connections>
-                                    <action selector="greyButtonTapped:" destination="BLm-Ee-0nZ" eventType="touchUpInside" id="rQd-wQ-XAr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lI8-jt-MJ9">
@@ -81,23 +65,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjB-iQ-aaj">
-                                <rect key="frame" x="109" y="461" width="30" height="30"/>
+                                <rect key="frame" x="66" y="430" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="red"/>
                                 <connections>
                                     <action selector="redButtonTapped:" destination="BLm-Ee-0nZ" eventType="touchUpInside" id="WC8-KZ-8Rg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIw-we-r5s">
-                                <rect key="frame" x="213" y="461" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="white"/>
-                                <connections>
-                                    <action selector="whiteButtonTapped:" destination="BLm-Ee-0nZ" eventType="touchUpInside" id="NfS-co-WVT"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3P-Lb-Yma">
-                                <rect key="frame" x="81" y="546" width="43" height="30"/>
+                                <rect key="frame" x="93" y="535" width="43" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="yellow"/>
                                 <connections>
@@ -105,48 +81,74 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keB-kC-oMv">
-                                <rect key="frame" x="164" y="362" width="48" height="30"/>
+                                <rect key="frame" x="109" y="318" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="orange"/>
                                 <connections>
                                     <action selector="orangeButtonTapped:" destination="BLm-Ee-0nZ" eventType="touchUpInside" id="v1O-yD-Yua"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many birds are found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRx-SX-UXF">
-                                <rect key="frame" x="16" y="149" width="343" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="sep-xK-XtQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw0-N2-AXH">
-                                <rect key="frame" x="233" y="535" width="30" height="30"/>
+                                <rect key="frame" x="251" y="535" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="tan"/>
                                 <connections>
                                     <action selector="tanButtonTapped:" destination="BLm-Ee-0nZ" eventType="touchUpInside" id="e8m-2O-vtf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What colour is it?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pat-s4-7P0">
-                                <rect key="frame" x="17" y="72" width="343" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What colour is the bird?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pat-s4-7P0">
+                                <rect key="frame" x="17" y="72" width="343" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="EfX-Al-tMh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBS-aK-9bc">
+                                <rect key="frame" x="161" y="398" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="grey"/>
+                                <connections>
+                                    <action selector="greyButtonTapped:" destination="BLm-Ee-0nZ" eventType="touchUpInside" id="rQd-wQ-XAr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIw-we-r5s">
+                                <rect key="frame" x="192" y="475" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="white"/>
+                                <connections>
+                                    <action selector="whiteButtonTapped:" destination="BLm-Ee-0nZ" eventType="touchUpInside" id="NfS-co-WVT"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WVo-Jy-LSU">
+                                <rect key="frame" x="98" y="149" width="179.5" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRx-SX-UXF">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="57"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="birds were found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpR-6i-Q4R">
+                                        <rect key="frame" x="25" y="14.5" width="154.5" height="28.5"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jpR-6i-Q4R" firstAttribute="leading" secondItem="iRx-SX-UXF" secondAttribute="trailing" constant="20" id="X1j-BT-XKw"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="WVo-Jy-LSU" firstAttribute="centerX" secondItem="blD-mh-OJb" secondAttribute="centerX" id="0KO-q0-Gal"/>
+                            <constraint firstItem="WVo-Jy-LSU" firstAttribute="top" secondItem="pat-s4-7P0" secondAttribute="bottom" constant="10" id="2nD-FJ-aMQ"/>
                             <constraint firstItem="pat-s4-7P0" firstAttribute="top" secondItem="Uun-GJ-21i" secondAttribute="bottom" constant="15" id="Eiu-C5-YMq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pat-s4-7P0" secondAttribute="trailing" id="bAi-Ij-a2R"/>
                             <constraint firstAttribute="leadingMargin" secondItem="pat-s4-7P0" secondAttribute="leading" id="dxh-8a-73Q"/>
-                            <constraint firstItem="iRx-SX-UXF" firstAttribute="top" secondItem="pat-s4-7P0" secondAttribute="bottom" constant="10" id="hGE-wf-mTV"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="iRx-SX-UXF" secondAttribute="leading" id="nfE-6i-KBA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iRx-SX-UXF" secondAttribute="trailing" id="zSG-21-BJx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KY9-mL-dTU">
@@ -161,7 +163,6 @@
                         <outlet property="blackButton" destination="2OM-xg-ESU" id="DhU-Sm-GKf"/>
                         <outlet property="blueButton" destination="d4S-1C-d2Z" id="VsK-9I-whX"/>
                         <outlet property="brownButton" destination="2OK-a9-Fce" id="S9N-8d-dG9"/>
-                        <outlet property="chestnutButton" destination="0Eg-VQ-NXg" id="9Bp-QB-pVp"/>
                         <outlet property="greenButton" destination="b81-rp-625" id="CyQ-Nu-Y22"/>
                         <outlet property="greyButton" destination="yBS-aK-9bc" id="PHl-Vn-xBz"/>
                         <outlet property="orangeButton" destination="keB-kC-oMv" id="vat-FE-v5W"/>
@@ -169,6 +170,7 @@
                         <outlet property="redButton" destination="OjB-iQ-aaj" id="gmW-NH-EMV"/>
                         <outlet property="tanButton" destination="sw0-N2-AXH" id="zvv-Me-EZ9"/>
                         <outlet property="topNavigationBar" destination="KY9-mL-dTU" id="Iry-sA-nuD"/>
+                        <outlet property="wereFound" destination="jpR-6i-Q4R" id="93t-KS-zNs"/>
                         <outlet property="whiteButton" destination="bIw-we-r5s" id="RSy-ir-M18"/>
                         <outlet property="yellowButton" destination="x3P-Lb-Yma" id="5mZ-It-dZW"/>
                     </connections>
@@ -190,11 +192,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="How big is it?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaL-aj-98G">
-                                <rect key="frame" x="16" y="72" width="343" height="60"/>
+                                <rect key="frame" x="16" y="72" width="343" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="46Y-hx-vk7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -231,15 +233,6 @@
                                     <action selector="hugeButtonTapped:" destination="44U-7z-Mg1" eventType="touchUpInside" id="JEo-oL-vuh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many birds are found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zp9-hy-vwj">
-                                <rect key="frame" x="62" y="149" width="252" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="qUc-UX-w16"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QES-Wm-tN2">
                                 <rect key="frame" x="138" y="414" width="114" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -263,7 +256,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like an Emu?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxS-8o-GQD">
-                                <rect key="frame" x="16" y="211" width="343" height="82"/>
+                                <rect key="frame" x="16" y="216" width="343" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="NkN-Kd-Emu"/>
                                 </constraints>
@@ -271,18 +264,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-Ai-WHz">
+                                <rect key="frame" x="151" y="149" width="73.5" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zp9-hy-vwj">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="57"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0o-GM-Vyg">
+                                        <rect key="frame" x="25" y="14.5" width="48.5" height="28.5"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="I0o-GM-Vyg" firstAttribute="leading" secondItem="Zp9-hy-vwj" secondAttribute="trailing" constant="20" id="W6W-OI-ytl"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uxS-8o-GQD" firstAttribute="top" secondItem="Zp9-hy-vwj" secondAttribute="bottom" constant="41" id="0PQ-hN-37j"/>
                             <constraint firstAttribute="leadingMargin" secondItem="uxS-8o-GQD" secondAttribute="leading" id="7aV-Xr-5AA"/>
-                            <constraint firstItem="Zp9-hy-vwj" firstAttribute="top" secondItem="YaL-aj-98G" secondAttribute="bottom" constant="10" id="Cnt-tX-pYi"/>
                             <constraint firstAttribute="leadingMargin" secondItem="YaL-aj-98G" secondAttribute="leading" id="Kr5-tF-7CN"/>
+                            <constraint firstItem="c6m-Ai-WHz" firstAttribute="top" secondItem="YaL-aj-98G" secondAttribute="bottom" constant="10" id="Osi-Dv-g8K"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uxS-8o-GQD" secondAttribute="trailing" id="Sjy-FG-4N0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YaL-aj-98G" secondAttribute="trailing" id="a2r-qP-mbN"/>
                             <constraint firstItem="YaL-aj-98G" firstAttribute="top" secondItem="caw-K7-W7J" secondAttribute="bottom" constant="15" id="cXr-Az-zG2"/>
-                            <constraint firstItem="Zp9-hy-vwj" firstAttribute="centerX" secondItem="PMj-9G-vA4" secondAttribute="centerX" id="db1-dG-kNo"/>
                             <constraint firstItem="uxS-8o-GQD" firstAttribute="centerX" secondItem="PMj-9G-vA4" secondAttribute="centerX" id="lGt-f4-jBS"/>
+                            <constraint firstItem="uxS-8o-GQD" firstAttribute="top" secondItem="c6m-Ai-WHz" secondAttribute="bottom" constant="10" id="v2H-6I-dUU"/>
+                            <constraint firstItem="c6m-Ai-WHz" firstAttribute="centerX" secondItem="PMj-9G-vA4" secondAttribute="centerX" id="w1o-86-OM7"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -304,6 +317,7 @@
                         <outlet property="mediumButton" destination="1fN-a0-GUm" id="Eem-t0-gU1"/>
                         <outlet property="smallButton" destination="KfH-yK-n8l" id="DhD-1q-TRv"/>
                         <outlet property="topNavigationBar" destination="57U-si-Juk" id="tgA-xP-eRn"/>
+                        <outlet property="wereFound" destination="I0o-GM-Vyg" id="jpQ-Ji-fxp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BEh-Ye-Dc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -323,16 +337,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Where did you find it?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV8-RU-nBf">
-                                <rect key="frame" x="16" y="81" width="343" height="60"/>
+                                <rect key="frame" x="16" y="81" width="343" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="gAx-Jx-EWX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMl-vE-eGc">
-                                <rect key="frame" x="224" y="182" width="100" height="75"/>
+                                <rect key="frame" x="224" y="214" width="100" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="NSW"/>
@@ -341,7 +355,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPR-mo-k6h">
-                                <rect key="frame" x="58" y="288" width="100" height="75"/>
+                                <rect key="frame" x="58" y="320" width="100" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="NT"/>
@@ -350,7 +364,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvv-yL-S9o">
-                                <rect key="frame" x="224" y="288" width="100" height="75"/>
+                                <rect key="frame" x="224" y="320" width="100" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="QLD"/>
@@ -359,7 +373,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SJ-oJ-sbd">
-                                <rect key="frame" x="58" y="393" width="100" height="75"/>
+                                <rect key="frame" x="58" y="425" width="100" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="SA"/>
@@ -368,7 +382,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CV-M5-GBo">
-                                <rect key="frame" x="224" y="393" width="100" height="75"/>
+                                <rect key="frame" x="224" y="425" width="100" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="TAS"/>
@@ -377,7 +391,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ps2-QY-pef">
-                                <rect key="frame" x="58" y="497" width="100" height="75"/>
+                                <rect key="frame" x="58" y="529" width="100" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="VIC"/>
@@ -386,7 +400,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwb-tb-0b9">
-                                <rect key="frame" x="224" y="497" width="100" height="75"/>
+                                <rect key="frame" x="224" y="529" width="100" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="WA"/>
@@ -394,17 +408,8 @@
                                     <action selector="waButtonTapped:" destination="6WE-id-39h" eventType="touchUpInside" id="Xf2-5P-7Eu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many birds are found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETw-6B-UBN">
-                                <rect key="frame" x="61.5" y="154" width="252" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="zr8-Bo-T6C"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdx-ul-RlP">
-                                <rect key="frame" x="58" y="182" width="100" height="75"/>
+                                <rect key="frame" x="58" y="214" width="100" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="ACT"/>
@@ -412,12 +417,32 @@
                                     <action selector="actButtonTapped:" destination="6WE-id-39h" eventType="touchUpInside" id="qFI-NE-GIf"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Poh-1d-xj6">
+                                <rect key="frame" x="151" y="149" width="73.5" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETw-6B-UBN">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="57"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Yw-iO-HRN">
+                                        <rect key="frame" x="25" y="14.5" width="48.5" height="28.5"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7Yw-iO-HRN" firstAttribute="leading" secondItem="ETw-6B-UBN" secondAttribute="trailing" constant="20" id="mlB-hx-QwF"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ETw-6B-UBN" firstAttribute="centerX" secondItem="Dy2-lL-gMz" secondAttribute="centerX" id="6Gc-BD-7sU"/>
+                            <constraint firstItem="7Yw-iO-HRN" firstAttribute="centerX" secondItem="Dy2-lL-gMz" secondAttribute="centerX" id="8g3-hB-GQR"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dV8-RU-nBf" secondAttribute="leading" id="CVN-zg-Fgd"/>
-                            <constraint firstItem="ETw-6B-UBN" firstAttribute="top" secondItem="dV8-RU-nBf" secondAttribute="bottom" constant="15" id="hmM-tW-V0N"/>
+                            <constraint firstItem="Poh-1d-xj6" firstAttribute="top" secondItem="dV8-RU-nBf" secondAttribute="bottom" constant="10" id="cFW-08-6gC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dV8-RU-nBf" secondAttribute="trailing" id="oCp-TJ-vOz"/>
                             <constraint firstItem="dV8-RU-nBf" firstAttribute="top" secondItem="hG8-ko-mTo" secondAttribute="bottom" constant="15" id="s8Y-uf-0U4"/>
                         </constraints>
@@ -442,16 +467,17 @@
                         <outlet property="topNavigationBar" destination="wah-C6-w4n" id="9be-fU-xYk"/>
                         <outlet property="vicButton" destination="Ps2-QY-pef" id="SoL-b7-fP9"/>
                         <outlet property="waButton" destination="zwb-tb-0b9" id="YVa-UW-VsB"/>
+                        <outlet property="wereFound" destination="7Yw-iO-HRN" id="kOk-sg-Sod"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0r-5R-o7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2485.5999999999999" y="264.01799100449779"/>
         </scene>
-        <!--Filter Result View Controller-->
+        <!--Result-->
         <scene sceneID="R2K-DY-FlI">
             <objects>
-                <viewController id="8xs-qD-Cok" customClass="FilterResultViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="8xs-qD-Cok" customClass="FilterResultViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eea-eR-Qzd"/>
                         <viewControllerLayoutGuide type="bottom" id="eNw-bh-Hlb"/>
@@ -487,7 +513,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="RDV-1D-IlW"/>
+                    <navigationItem key="navigationItem" title="Result" id="RDV-1D-IlW"/>
                     <connections>
                         <outlet property="tableView" destination="7zL-bk-Q4R" id="TXZ-EA-Qxf"/>
                         <outlet property="topNavigationBar" destination="RDV-1D-IlW" id="WFu-yz-hsn"/>
@@ -567,7 +593,7 @@
         <!--Bird Detail-->
         <scene sceneID="Pl7-QC-YJS">
             <objects>
-                <viewController id="4ew-nn-p9V" customClass="SearchDetailViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="4ew-nn-p9V" customClass="SearchDetailViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="90w-Lt-6F1"/>
                         <viewControllerLayoutGuide type="bottom" id="lz2-MA-jaa"/>
@@ -576,10 +602,10 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oe3-CT-UAh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oe3-CT-UAh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tme-rb-vDi">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tme-rb-vDi">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="792"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9o-Z1-H9i">
@@ -589,13 +615,13 @@
                                                 </constraints>
                                             </scrollView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Common Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdg-V6-SFG">
-                                                <rect key="frame" x="18" y="359" width="339" height="34"/>
+                                                <rect key="frame" x="18" y="297" width="339" height="34"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scientific Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOW-H9-W4y">
-                                                <rect key="frame" x="18" y="401" width="339" height="26"/>
+                                                <rect key="frame" x="18" y="339" width="339" height="26"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -606,124 +632,126 @@
                                                 <color key="currentPageIndicatorTintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </pageControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7B-AH-0ec">
-                                                <rect key="frame" x="18" y="435" width="339" height="28.5"/>
+                                                <rect key="frame" x="18" y="373" width="339" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnt-WX-eTU">
-                                                <rect key="frame" x="18" y="471.5" width="339" height="24.5"/>
+                                                <rect key="frame" x="18" y="409.5" width="339" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZI-Kl-71E">
-                                                <rect key="frame" x="18" y="504" width="339" height="24.5"/>
+                                                <rect key="frame" x="18" y="442" width="339" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzI-Tt-MtA">
-                                                <rect key="frame" x="18" y="536.5" width="339" height="24.5"/>
+                                                <rect key="frame" x="18" y="474.5" width="339" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZT-1S-RKE">
-                                                <rect key="frame" x="18" y="569" width="339" height="24.5"/>
+                                                <rect key="frame" x="18" y="507" width="339" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tC-dy-Fvn">
-                                                <rect key="frame" x="18" y="601.5" width="339" height="28.5"/>
+                                                <rect key="frame" x="18" y="539.5" width="339" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQB-mn-gq7">
-                                                <rect key="frame" x="18" y="638" width="339" height="24.5"/>
+                                                <rect key="frame" x="18" y="576" width="339" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqN-wK-bjI">
-                                                <rect key="frame" x="18" y="670.5" width="339" height="28.5"/>
+                                                <rect key="frame" x="18" y="608.5" width="339" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v88-aC-9OO">
-                                                <rect key="frame" x="18" y="707" width="339" height="24.5"/>
+                                                <rect key="frame" x="18" y="645" width="339" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nF5-kT-s8S">
-                                                <rect key="frame" x="18" y="739.5" width="339" height="28.5"/>
+                                                <rect key="frame" x="18" y="677.5" width="339" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvM-JB-mo8">
-                                                <rect key="frame" x="18" y="776" width="339" height="24.5"/>
+                                                <rect key="frame" x="18" y="714" width="339" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnk-gE-TD5">
-                                                <rect key="frame" x="18" y="808.5" width="339" height="28.5"/>
+                                                <rect key="frame" x="18" y="746.5" width="339" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6E-Bz-COG">
-                                                <rect key="frame" x="18" y="845" width="339" height="24.5"/>
+                                                <rect key="frame" x="18" y="783" width="339" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAf-nF-Ye6">
-                                                <rect key="frame" x="18" y="877.5" width="339" height="24.5"/>
+                                                <rect key="frame" x="18" y="815.5" width="339" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHj-CB-reJ">
-                                                <rect key="frame" x="18" y="910" width="339" height="24.5"/>
+                                                <rect key="frame" x="18" y="848" width="339" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiX-vd-e0O">
-                                                <rect key="frame" x="18" y="317" width="89" height="25"/>
-                                                <state key="normal" title="numbers">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="tagButtonTapped:" destination="4ew-nn-p9V" eventType="touchUpInside" id="bPK-Vb-7kG"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhF-nO-Bvb">
-                                                <rect key="frame" x="289" y="317" width="24" height="33"/>
+                                                <rect key="frame" x="289" y="258" width="24" height="24"/>
                                                 <state key="normal" image="ic_hearing_2x"/>
                                                 <connections>
                                                     <action selector="play:" destination="4ew-nn-p9V" eventType="touchUpInside" id="Mfr-iT-eIZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLn-8F-XTC">
-                                                <rect key="frame" x="328" y="314" width="24" height="39"/>
+                                                <rect key="frame" x="328" y="258" width="24" height="24"/>
                                                 <state key="normal" image="ic_pause_2x"/>
                                                 <connections>
                                                     <action selector="pause:" destination="4ew-nn-p9V" eventType="touchUpInside" id="awv-NK-xlk"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiX-vd-e0O">
+                                                <rect key="frame" x="18" y="255" width="91" height="32"/>
+                                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="Z8A-bP-Wlr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <state key="normal" title="  Tag It!  ">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tagButtonTapped:" destination="4ew-nn-p9V" eventType="touchUpInside" id="bPK-Vb-7kG"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="5tC-dy-Fvn" secondAttribute="trailing" constant="18" id="0ca-D1-fTj"/>
-                                            <constraint firstItem="tip-iM-aOm" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="168" id="24s-K6-Z2W"/>
-                                            <constraint firstItem="kiX-vd-e0O" firstAttribute="top" secondItem="tip-iM-aOm" secondAttribute="bottom" constant="30" id="2fB-Sd-RgF"/>
                                             <constraint firstAttribute="trailing" secondItem="gdg-V6-SFG" secondAttribute="trailing" constant="18" id="3FL-ei-eTM"/>
                                             <constraint firstAttribute="trailing" secondItem="nF5-kT-s8S" secondAttribute="trailing" constant="18" id="3ZN-vM-L5j"/>
                                             <constraint firstAttribute="trailing" secondItem="Hnt-WX-eTU" secondAttribute="trailing" constant="18" id="4DP-eq-VzV"/>
@@ -743,44 +771,46 @@
                                             <constraint firstItem="A6E-Bz-COG" firstAttribute="top" secondItem="rnk-gE-TD5" secondAttribute="bottom" constant="8" id="AWh-Si-5Co"/>
                                             <constraint firstItem="rnk-gE-TD5" firstAttribute="top" secondItem="UvM-JB-mo8" secondAttribute="bottom" constant="8" id="Aua-tR-1C7"/>
                                             <constraint firstItem="cHj-CB-reJ" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="Bav-TX-tz9"/>
+                                            <constraint firstItem="zhF-nO-Bvb" firstAttribute="top" secondItem="i9o-Z1-H9i" secondAttribute="bottom" constant="8" id="Bhm-Ir-ACB"/>
                                             <constraint firstItem="BAf-nF-Ye6" firstAttribute="top" secondItem="A6E-Bz-COG" secondAttribute="bottom" constant="8" id="DyF-nA-Cay"/>
                                             <constraint firstItem="i9o-Z1-H9i" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" id="Eza-pv-Jeb"/>
                                             <constraint firstItem="5tC-dy-Fvn" firstAttribute="top" secondItem="rZT-1S-RKE" secondAttribute="bottom" constant="8" id="Gwm-RT-yfh"/>
-                                            <constraint firstItem="dLn-8F-XTC" firstAttribute="top" secondItem="tip-iM-aOm" secondAttribute="bottom" constant="27" id="HI5-o2-7bF"/>
                                             <constraint firstItem="hZI-Kl-71E" firstAttribute="top" secondItem="Hnt-WX-eTU" secondAttribute="bottom" constant="8" id="JkF-Ks-6ZG"/>
                                             <constraint firstItem="UvM-JB-mo8" firstAttribute="top" secondItem="nF5-kT-s8S" secondAttribute="bottom" constant="8" id="L3J-Of-cpj"/>
                                             <constraint firstItem="u7B-AH-0ec" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="MEZ-ic-G59"/>
                                             <constraint firstItem="nF5-kT-s8S" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="OA9-Rd-MKs"/>
                                             <constraint firstItem="BAf-nF-Ye6" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="OwU-84-hHi"/>
-                                            <constraint firstAttribute="trailing" secondItem="tip-iM-aOm" secondAttribute="trailing" constant="168" id="Pcz-oA-Bh3"/>
+                                            <constraint firstItem="tip-iM-aOm" firstAttribute="centerX" secondItem="tme-rb-vDi" secondAttribute="centerX" id="PEU-vn-9Td"/>
                                             <constraint firstAttribute="trailing" secondItem="hZI-Kl-71E" secondAttribute="trailing" constant="18" id="TFE-Pg-vnT"/>
                                             <constraint firstItem="cHj-CB-reJ" firstAttribute="top" secondItem="BAf-nF-Ye6" secondAttribute="bottom" constant="8" id="UTL-KF-xtM"/>
                                             <constraint firstAttribute="trailing" secondItem="PzI-Tt-MtA" secondAttribute="trailing" constant="18" id="VD5-3i-KW8"/>
-                                            <constraint firstItem="zhF-nO-Bvb" firstAttribute="top" secondItem="tip-iM-aOm" secondAttribute="bottom" constant="30" id="VSh-UW-xub"/>
                                             <constraint firstItem="Hnt-WX-eTU" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="Wo7-M5-6he"/>
-                                            <constraint firstItem="zhF-nO-Bvb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kiX-vd-e0O" secondAttribute="trailing" constant="150" id="WrA-V4-fo3"/>
                                             <constraint firstItem="eQB-mn-gq7" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="XR2-OP-gGa"/>
                                             <constraint firstAttribute="trailing" secondItem="UvM-JB-mo8" secondAttribute="trailing" constant="18" id="Xlo-mJ-ZF8"/>
                                             <constraint firstAttribute="trailing" secondItem="u7B-AH-0ec" secondAttribute="trailing" constant="18" id="Y5t-nL-Ppq"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cHj-CB-reJ" secondAttribute="bottom" constant="200" id="YyV-k1-c3S"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cHj-CB-reJ" secondAttribute="bottom" constant="10" id="YyV-k1-c3S"/>
                                             <constraint firstItem="5tC-dy-Fvn" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="aOn-cb-8p6"/>
                                             <constraint firstAttribute="trailing" secondItem="v88-aC-9OO" secondAttribute="trailing" constant="18" id="b56-TX-06U"/>
                                             <constraint firstAttribute="trailing" secondItem="rZT-1S-RKE" secondAttribute="trailing" constant="18" id="bYy-SR-E0K"/>
                                             <constraint firstAttribute="trailing" secondItem="i9o-Z1-H9i" secondAttribute="trailing" id="bus-ef-nhI"/>
-                                            <constraint firstItem="gdg-V6-SFG" firstAttribute="top" secondItem="zhF-nO-Bvb" secondAttribute="bottom" constant="9" id="cG5-mg-fVo"/>
                                             <constraint firstItem="PzI-Tt-MtA" firstAttribute="top" secondItem="hZI-Kl-71E" secondAttribute="bottom" constant="8" id="cva-ul-n0e"/>
                                             <constraint firstItem="A6E-Bz-COG" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="cyc-NX-5jZ"/>
+                                            <constraint firstItem="gdg-V6-SFG" firstAttribute="top" secondItem="tip-iM-aOm" secondAttribute="bottom" constant="10" id="dpQ-G2-E6j"/>
                                             <constraint firstItem="rZT-1S-RKE" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="edq-et-s3K"/>
                                             <constraint firstAttribute="trailing" secondItem="rnk-gE-TD5" secondAttribute="trailing" constant="18" id="ekG-Sc-gVn"/>
                                             <constraint firstItem="i9o-Z1-H9i" firstAttribute="top" secondItem="tme-rb-vDi" secondAttribute="top" id="fkI-1L-Aod"/>
                                             <constraint firstItem="yqN-wK-bjI" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="fzK-Su-IG2"/>
-                                            <constraint firstItem="gdg-V6-SFG" firstAttribute="top" secondItem="dLn-8F-XTC" secondAttribute="bottom" constant="6" id="gdp-Cz-WMn"/>
+                                            <constraint firstItem="kiX-vd-e0O" firstAttribute="top" secondItem="i9o-Z1-H9i" secondAttribute="bottom" constant="5" id="guH-ay-2Uf"/>
                                             <constraint firstItem="kiX-vd-e0O" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="hj9-o7-K9K"/>
                                             <constraint firstItem="u7B-AH-0ec" firstAttribute="top" secondItem="WOW-H9-W4y" secondAttribute="bottom" constant="8" id="hue-M5-byb"/>
-                                            <constraint firstItem="gdg-V6-SFG" firstAttribute="top" secondItem="kiX-vd-e0O" secondAttribute="bottom" constant="8" id="kLv-sx-NNY"/>
+                                            <constraint firstItem="gdg-V6-SFG" firstAttribute="top" secondItem="zhF-nO-Bvb" secondAttribute="bottom" constant="15" id="jCO-gA-aMN"/>
+                                            <constraint firstItem="gdg-V6-SFG" firstAttribute="top" secondItem="dLn-8F-XTC" secondAttribute="bottom" constant="15" id="jWD-NA-dMP"/>
+                                            <constraint firstItem="zhF-nO-Bvb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tip-iM-aOm" secondAttribute="trailing" constant="20" id="mR6-VG-tfD"/>
                                             <constraint firstItem="v88-aC-9OO" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="mcK-pE-Gra"/>
+                                            <constraint firstItem="dLn-8F-XTC" firstAttribute="top" secondItem="i9o-Z1-H9i" secondAttribute="bottom" constant="8" id="qBq-TE-19p"/>
                                             <constraint firstAttribute="trailing" secondItem="WOW-H9-W4y" secondAttribute="trailing" constant="18" id="qF3-Br-ZU3"/>
                                             <constraint firstItem="WOW-H9-W4y" firstAttribute="leading" secondItem="tme-rb-vDi" secondAttribute="leading" constant="18" id="qLs-Uy-Ojz"/>
+                                            <constraint firstItem="tip-iM-aOm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kiX-vd-e0O" secondAttribute="trailing" constant="20" id="sA9-JN-4G7"/>
                                             <constraint firstAttribute="trailing" secondItem="A6E-Bz-COG" secondAttribute="trailing" constant="18" id="sRq-Zb-TaG"/>
                                             <constraint firstItem="yqN-wK-bjI" firstAttribute="top" secondItem="eQB-mn-gq7" secondAttribute="bottom" constant="8" id="u40-e9-VmE"/>
                                             <constraint firstItem="rZT-1S-RKE" firstAttribute="top" secondItem="PzI-Tt-MtA" secondAttribute="bottom" constant="8" id="uPo-sz-Ivb"/>
@@ -792,7 +822,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="tme-rb-vDi" secondAttribute="bottom" constant="-210" id="0X9-n6-id6"/>
+                                    <constraint firstAttribute="bottom" secondItem="tme-rb-vDi" secondAttribute="bottom" id="0X9-n6-id6"/>
                                     <constraint firstItem="tme-rb-vDi" firstAttribute="leading" secondItem="oe3-CT-UAh" secondAttribute="leading" id="Nn4-13-VBw"/>
                                     <constraint firstItem="tme-rb-vDi" firstAttribute="top" secondItem="oe3-CT-UAh" secondAttribute="top" id="Sbv-oF-2C0" userLabel="View.top = top - 58"/>
                                     <constraint firstAttribute="trailing" secondItem="tme-rb-vDi" secondAttribute="trailing" id="WFw-dV-MIs"/>
@@ -806,7 +836,6 @@
                             <constraint firstAttribute="trailing" secondItem="oe3-CT-UAh" secondAttribute="trailing" id="W14-sR-650"/>
                             <constraint firstItem="oe3-CT-UAh" firstAttribute="leading" secondItem="Msp-bF-VmA" secondAttribute="leading" id="gRO-Xk-xjV"/>
                             <constraint firstItem="tme-rb-vDi" firstAttribute="width" secondItem="Msp-bF-VmA" secondAttribute="width" id="imp-TB-NqO"/>
-                            <constraint firstItem="tme-rb-vDi" firstAttribute="height" secondItem="Msp-bF-VmA" secondAttribute="height" priority="250" constant="161" id="jJU-32-IOS"/>
                             <constraint firstItem="oe3-CT-UAh" firstAttribute="top" secondItem="90w-Lt-6F1" secondAttribute="bottom" id="tm2-tE-LKt"/>
                         </constraints>
                     </view>
@@ -816,6 +845,7 @@
                         <outlet property="categoryLabel" destination="A6E-Bz-COG" id="OI5-xi-dQy"/>
                         <outlet property="commonNameLabel" destination="gdg-V6-SFG" id="Sbe-1e-69l"/>
                         <outlet property="contentScrollView" destination="oe3-CT-UAh" id="uhn-IO-u5W"/>
+                        <outlet property="contentView" destination="tme-rb-vDi" id="Td5-gj-Vqw"/>
                         <outlet property="descriptionInfoLabel" destination="v88-aC-9OO" id="KXV-qb-FBs"/>
                         <outlet property="descriptionLabel" destination="yqN-wK-bjI" id="NY0-h2-bGe"/>
                         <outlet property="dietInfoLabel" destination="UvM-JB-mo8" id="bpY-cg-mtO"/>
@@ -843,7 +873,7 @@
             </objects>
             <point key="canvasLocation" x="1932" y="1065.5172413793105"/>
         </scene>
-        <!--Bird Log View Controller-->
+        <!--Bird Log-->
         <scene sceneID="KUK-9r-rwP">
             <objects>
                 <viewController id="X7z-N1-aUC" customClass="BirdLogViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -897,9 +927,7 @@
                             <constraint firstItem="bU1-cq-VAb" firstAttribute="top" secondItem="zb4-1f-GtY" secondAttribute="bottom" id="bn6-Vl-FiS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ghY-Ou-Jhn">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Bird Log" id="ghY-Ou-Jhn"/>
                     <connections>
                         <outlet property="tableView" destination="bU1-cq-VAb" id="p25-x4-5t1"/>
                         <outlet property="topNavigationBar" destination="ghY-Ou-Jhn" id="ZTz-AU-M5O"/>
@@ -909,7 +937,7 @@
             </objects>
             <point key="canvasLocation" x="920.79999999999995" y="-653.52323838080963"/>
         </scene>
-        <!--Bird Log Detail View Controller-->
+        <!--Bird Tags-->
         <scene sceneID="RrU-u6-qDh">
             <objects>
                 <viewController id="cLa-8D-smx" customClass="BirdLogDetailViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -952,9 +980,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="owF-aj-9cD">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Bird Tags" id="owF-aj-9cD"/>
                     <connections>
                         <outlet property="tableView" destination="TyE-p4-x0l" id="wyP-WW-y9V"/>
                         <outlet property="topNavigationBar" destination="owF-aj-9cD" id="6xa-89-BLb"/>
@@ -964,7 +990,7 @@
             </objects>
             <point key="canvasLocation" x="1896.8" y="-653.52323838080963"/>
         </scene>
-        <!--Bird Tag Detail View Controller-->
+        <!--Detail-->
         <scene sceneID="AXi-FJ-VnV">
             <objects>
                 <viewController id="029-Ym-2Hu" customClass="BirdTagDetailViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -1017,9 +1043,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Ld0-EZ-saQ" secondAttribute="trailing" id="uMc-0f-8zz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tcj-lA-f1e">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Detail" id="tcj-lA-f1e"/>
                     <connections>
                         <outlet property="addressLabel" destination="Ld0-EZ-saQ" id="1lA-PP-uhQ"/>
                         <outlet property="birdNameLabel" destination="IPU-dg-tiQ" id="yVM-ye-g5e"/>
@@ -1153,7 +1177,7 @@
         <!--About Us View Controller-->
         <scene sceneID="Td4-yZ-UVe">
             <objects>
-                <viewController id="1Ma-nx-nPN" customClass="AboutUsViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1Ma-nx-nPN" customClass="AboutUsViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m9O-X3-n9C"/>
                         <viewControllerLayoutGuide type="bottom" id="O1I-yr-tQq"/>
@@ -1162,27 +1186,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXo-Y9-B3X">
-                                <rect key="frame" x="16" y="69" width="343" height="467"/>
-                                <string key="text">The Twitcher App has been developed by the IQ”N”LS Team to help identify and discover Australian Birds. Through the functions of filtering, to identify birds or searching by bird names, kids (and their parents) can learn what bird they have seen and information about it, while also tagging birds that have been sighted.
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bY-fy-Tdm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Kk-j9-apE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="542.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXo-Y9-B3X">
+                                                <rect key="frame" x="16" y="8" width="343" height="467"/>
+                                                <mutableString key="text">The Twitcher App has been developed by the IQ”N”LS Team to help identify and discover Australian Birds. Through the functions of filtering, to identify birds or searching by bird names, kids (and their parents) can learn what bird they have seen and information about it, while also tagging birds that have been sighted.
 
 IQ”N”LS is a 5 member Monash University Industry Project Team, that has developed Twitcher for iOS. With consultation from our Industry Mentors, Carsales, the app has been designed to be used by 5 to 10 year old’s and aims to be a fun but educational tool that kids can use while in the great outdoors.
 
 Data Sources
 Bird details and descriptions: ©Nicole Bouglouan – www.oiseaux-birds.com
 Bird sounds: Xeno-Canto licenced under CC BY-NC-SA 4.0 - www.xeno-canto.org
-Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA 3.0 - https://en.wikipedia.org/wiki/List_of_birds_of_Australia</string>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="14"/>
-                                <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA 3.0 - https://en.wikipedia.org/wiki/List_of_birds_of_Australia</mutableString>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="VXo-Y9-B3X" firstAttribute="leading" secondItem="6Kk-j9-apE" secondAttribute="leading" constant="16" id="1fF-KN-y3s"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VXo-Y9-B3X" secondAttribute="bottom" constant="10" id="cgh-XU-xQS"/>
+                                            <constraint firstAttribute="trailing" secondItem="VXo-Y9-B3X" secondAttribute="trailing" constant="16" id="o0m-b5-a0m"/>
+                                            <constraint firstItem="VXo-Y9-B3X" firstAttribute="top" secondItem="6Kk-j9-apE" secondAttribute="top" constant="8" id="pot-ca-vSK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6Kk-j9-apE" secondAttribute="bottom" id="1CX-kb-6qR"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Kk-j9-apE" secondAttribute="trailing" id="GWP-1r-Zg0"/>
+                                    <constraint firstItem="6Kk-j9-apE" firstAttribute="top" secondItem="2bY-fy-Tdm" secondAttribute="top" id="Xoz-jL-FJy"/>
+                                    <constraint firstItem="6Kk-j9-apE" firstAttribute="leading" secondItem="2bY-fy-Tdm" secondAttribute="leading" id="Zjy-Mp-epj"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="VXo-Y9-B3X" secondAttribute="trailing" id="GWs-1u-tm8"/>
-                            <constraint firstItem="O1I-yr-tQq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VXo-Y9-B3X" secondAttribute="bottom" constant="10" id="KxV-FQ-wea"/>
-                            <constraint firstItem="VXo-Y9-B3X" firstAttribute="top" secondItem="m9O-X3-n9C" secondAttribute="bottom" constant="5" id="RRf-xE-mws"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="VXo-Y9-B3X" secondAttribute="leading" id="Yb3-Qu-ZIS"/>
+                            <constraint firstItem="2bY-fy-Tdm" firstAttribute="top" secondItem="m9O-X3-n9C" secondAttribute="bottom" id="8vI-xk-WjU"/>
+                            <constraint firstItem="6Kk-j9-apE" firstAttribute="width" secondItem="dz9-XR-GXY" secondAttribute="width" id="B3l-0H-xiI"/>
+                            <constraint firstItem="O1I-yr-tQq" firstAttribute="top" secondItem="2bY-fy-Tdm" secondAttribute="bottom" id="E38-w3-W8T"/>
+                            <constraint firstAttribute="trailing" secondItem="2bY-fy-Tdm" secondAttribute="trailing" id="Glg-7H-kGX"/>
+                            <constraint firstItem="2bY-fy-Tdm" firstAttribute="leading" secondItem="dz9-XR-GXY" secondAttribute="leading" id="hzS-v6-SFF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="goc-ac-3X5">
@@ -1211,11 +1259,11 @@ Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA
             </objects>
             <point key="canvasLocation" x="-2322" y="-618"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="nPs-fE-G7F">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nyc-VX-UfL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="xyj-J8-c5U"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search25" id="xyj-J8-c5U"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bcb-pA-G8Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1295,6 +1343,7 @@ Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA
         <image name="filter25" width="25" height="25"/>
         <image name="ic_hearing_2x" width="24" height="24"/>
         <image name="ic_pause_2x" width="24" height="24"/>
+        <image name="search25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iOO-pL-69a"/>

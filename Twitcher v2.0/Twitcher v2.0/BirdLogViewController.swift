@@ -22,7 +22,7 @@ class BirdLogViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         self.title = "Bird Log"
         navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
-        tabBarController?.tabBar.tintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
+        //tabBarController?.tabBar.tintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
         if let rect = self.navigationController?.navigationBar.frame {
             let y = -rect.size.height - rect.origin.y
             self.tableView.contentInset = UIEdgeInsetsMake( y, 0, 0, 0)

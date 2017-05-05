@@ -44,7 +44,7 @@ class SearchBirdViewController: UIViewController, UITableViewDelegate, UITableVi
         self.hideKeyboardWhenTappedAround()
         //self.tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
-        tabBarController?.tabBar.tintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
+        //tabBarController?.tabBar.tintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
         searchBar.barTintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
     }
     

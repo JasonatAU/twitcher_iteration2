@@ -12,10 +12,10 @@ class ColourPickerViewController: UIViewController {
 
     
     @IBOutlet weak var birdNumbers: UILabel!
+    @IBOutlet weak var wereFound: UILabel!
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var blackButton: UIButton!
     @IBOutlet weak var brownButton: UIButton!
-    @IBOutlet weak var chestnutButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var greyButton: UIButton!
     @IBOutlet weak var pinkButton: UIButton!
@@ -60,7 +60,7 @@ class ColourPickerViewController: UIViewController {
         //navigationController?.delegate = self as! UINavigationControllerDelegate
         //navigationController?.hidesBarsOnSwipe = true
         navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
-        tabBarController?.tabBar.tintColor = UIColor(colorLiteralRed: 0/255, green: 204/255, blue: 255/255, alpha: 1)
+        tabBarController?.tabBar.tintColor = UIColor(colorLiteralRed: 0/255, green: 88/255, blue: 255/255, alpha: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,9 +72,6 @@ class ColourPickerViewController: UIViewController {
         }
         if brownButton.frame.width == big{
             shrink(button: brownButton)
-        }
-        if chestnutButton.frame.width == big{
-            shrink(button: chestnutButton)
         }
         if greenButton.frame.width == big{
             shrink(button: greenButton)
@@ -114,9 +111,6 @@ class ColourPickerViewController: UIViewController {
     }
     @IBAction func brownButtonTapped(_ sender: UIButton) {
         updateOptions(button: brownButton, colour: "brown")
-    }
-    @IBAction func chestnutButtonTapped(_ sender: UIButton) {
-        updateOptions(button: chestnutButton, colour: "chestnut")
     }
     @IBAction func greenButtonTapped(_ sender: UIButton) {
         updateOptions(button: greenButton, colour: "green")
@@ -166,7 +160,12 @@ class ColourPickerViewController: UIViewController {
     func updateBirdNumbers(){
         var numbers = 0
         numbers = Filter.filter(colours: options, size: size, locations: locations).count
-        birdNumbers.text = "\(numbers) birds were found!"
+        birdNumbers.text = "\(numbers) "
+        if numbers > 1{
+            wereFound.text = "birds were found!"
+        }else{
+            wereFound.text = "bird was found!"
+        }
     }
     
     func updateOptions(button:UIButton, colour:String){
@@ -202,10 +201,6 @@ class ColourPickerViewController: UIViewController {
         brownButton.frame = CGRect(x: brownButton.frame.origin.x, y: brownButton.frame.origin.y, width: small, height: small)
         makeCircle(button: brownButton)
         brownButton.backgroundColor = UIColor(red: 139/255, green: 69/255, blue: 19/255, alpha: 1)
-
-        chestnutButton.frame = CGRect(x: chestnutButton.frame.origin.x, y: chestnutButton.frame.origin.y, width: small, height: small)
-        makeCircle(button: chestnutButton)
-        chestnutButton.backgroundColor = UIColor(red: 149/255, green: 69/255, blue: 53/255, alpha: 1)
         
         greenButton.frame = CGRect(x: greenButton.frame.origin.x, y: greenButton.frame.origin.y, width: small, height: small)
         makeCircle(button: greenButton)
@@ -253,10 +248,6 @@ class ColourPickerViewController: UIViewController {
         makeCircle(button: brownButton)
         brownButton.backgroundColor = UIColor(red: 139/255, green: 69/255, blue: 19/255, alpha: 1)
         
-        chestnutButton.frame = CGRect(x: small*3, y: small*5.5, width: small, height: small)
-        makeCircle(button: chestnutButton)
-        chestnutButton.backgroundColor = UIColor(red: 149/255, green: 69/255, blue: 53/255, alpha: 1)
-        
         greenButton.frame = CGRect(x: small*6, y: small*5, width: small, height: small)
         makeCircle(button: greenButton)
         greenButton.backgroundColor = UIColor(red: 0/255, green: 128/255, blue: 0/255, alpha: 1)
@@ -294,7 +285,6 @@ class ColourPickerViewController: UIViewController {
         blueButton.setTitle("", for: .normal)
         blackButton.setTitle("", for: .normal)
         brownButton.setTitle("", for: .normal)
-        chestnutButton.setTitle("", for: .normal)
         greenButton.setTitle("", for: .normal)
         pinkButton.setTitle("", for: .normal)
         greyButton.setTitle("", for: .normal)

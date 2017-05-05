@@ -21,7 +21,7 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
     
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var pictureScrollView: UIScrollView!
-    
+    @IBOutlet weak var contentView: UIView!
 
     @IBOutlet weak var tagButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
@@ -69,13 +69,6 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         loadBirdInfo()
         initAVPlayer()
         initTagButton()
-//        if let rectTop = self.tabBarController?.tabBar.frame {
-//            if let rectBot = self.navigationController?.navigationBar.frame {
-//                let y1 = rectTop.size.height + rectTop.origin.y
-//                let y2 = rectBot.origin.y
-//                self.contentScrollView.contentInset = UIEdgeInsetsMake( y1, y2, 0, 0)
-//            }
-//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -174,8 +167,15 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
     }
     
     func initTagButton(){
-        let birdTags = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!))
-        tagButton.setTitle("\(birdTags.count) Times", for: .normal)
+        let birdTags = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!)).count
+        if birdTags == 0{
+            tagButton.setTitle(" Tag It! ", for: .normal)
+        }else if birdTags == 1{
+            tagButton.setTitle(" 1 Tag! ", for: .normal)
+        }else{
+            tagButton.setTitle(" \(birdTags) Tags! ", for: .normal)
+        }
+        tagButton.layer.cornerRadius = 0.1 * tagButton.bounds.size.width
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -192,17 +192,35 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         player.pause()
     }
     @IBAction func tagButtonTapped(_ sender: UIButton) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let newBirdTag = NSEntityDescription.insertNewObject(forEntityName: "BirdTag", into: context) as! BirdTag
-        newBirdTag.birdIndex = (bird?.index)!
-        newBirdTag.isSeen = 1
-        newBirdTag.latitude = latitude
-        newBirdTag.longitude = longitude
-        newBirdTag.date = Filter.getDate()
         
-        let birdTags = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!))
-        tagButton.setTitle("\(birdTags.count) Times", for: .normal)
-        Filter.writeTagToCSV()
+        let birdTags = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!)).count
+        let alert = UIAlertController(title: "Add Bird Tag", message: "Would you like to tag \(Filter.aOrAn(name: (bird?.commonName)!)) \(Filter.captitaliseFirstCharacter(aString: (bird?.commonName)!))?\nThis is the \(Filter.ordinal(aInt: birdTags+1)) time you tag it!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: { action in
+            
+            print("do nothing")
+        }))
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { action in
+            print("add the tag")
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let newBirdTag = NSEntityDescription.insertNewObject(forEntityName: "BirdTag", into: context) as! BirdTag
+            newBirdTag.birdIndex = (self.bird?.index)!
+            newBirdTag.isSeen = 1
+            newBirdTag.latitude = self.latitude
+            newBirdTag.longitude = self.longitude
+            newBirdTag.date = Filter.getDate()
+            
+            self.initTagButton()
+            Filter.writeTagToCSV()
+            
+        }))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
