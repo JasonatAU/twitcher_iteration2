@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wpA-gZ-j1k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QCk-vS-Ueu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -152,6 +152,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KY9-mL-dTU">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CHw-II-5VK">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Home"/>
+                            <connections>
+                                <segue destination="QCk-vS-Ueu" kind="show" id="iKk-gI-7le"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="b7D-BE-K69">
                             <connections>
                                 <segue destination="44U-7z-Mg1" kind="show" identifier="colourToSize" id="NBX-pu-NIn"/>
@@ -177,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKh-Pd-OLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920.79999999999995" y="263.11844077961024"/>
+            <point key="canvasLocation" x="921" y="64"/>
         </scene>
         <!--Size Picker View Controller-->
         <scene sceneID="aJD-4o-XVP">
@@ -301,6 +311,15 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="57U-si-Juk">
                         <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y9r-Um-3u8">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Home"/>
+                            <connections>
+                                <segue destination="QCk-vS-Ueu" kind="show" id="VJG-oF-U37"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="yEL-bU-ntc">
                             <connections>
                                 <segue destination="6WE-id-39h" kind="show" identifier="sizeToLocation" id="Gxn-DQ-2YJ"/>
@@ -322,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BEh-Ye-Dc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1765.5999999999999" y="264.01799100449779"/>
+            <point key="canvasLocation" x="1766" y="65"/>
         </scene>
         <!--Location Picker View Controller-->
         <scene sceneID="aAb-bC-Sk9">
@@ -450,6 +469,15 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="wah-C6-w4n">
                         <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wt0-pZ-a9L">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Home"/>
+                            <connections>
+                                <segue destination="QCk-vS-Ueu" kind="show" id="C1a-Ay-xEI"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="zO0-85-xFd">
                             <connections>
                                 <segue destination="8xs-qD-Cok" kind="show" identifier="locationToList" id="J76-yC-5tf"/>
@@ -472,9 +500,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0r-5R-o7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2485.5999999999999" y="264.01799100449779"/>
+            <point key="canvasLocation" x="2486" y="65"/>
         </scene>
-        <!--Result-->
+        <!--Filter Result View Controller-->
         <scene sceneID="R2K-DY-FlI">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="8xs-qD-Cok" customClass="FilterResultViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -513,7 +541,18 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Result" id="RDV-1D-IlW"/>
+                    <navigationItem key="navigationItem" id="RDV-1D-IlW">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IHi-Q9-4r6">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Home"/>
+                            <connections>
+                                <segue destination="QCk-vS-Ueu" kind="show" id="men-Vt-SW5"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="7zL-bk-Q4R" id="TXZ-EA-Qxf"/>
                         <outlet property="topNavigationBar" destination="RDV-1D-IlW" id="WFu-yz-hsn"/>
@@ -521,9 +560,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgG-N9-8sB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3519.1999999999998" y="263.11844077961024"/>
+            <point key="canvasLocation" x="3519" y="64"/>
         </scene>
-        <!--Search-->
+        <!--Search Bird View Controller-->
         <scene sceneID="mcd-0x-2yP">
             <objects>
                 <viewController id="4gC-fy-PTt" customClass="SearchBirdViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -536,14 +575,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HXr-R0-5cI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gDc-Ea-evQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Blh-FX-u8u">
-                                        <rect key="frame" x="0.0" y="67" width="375" height="487"/>
+                                        <rect key="frame" x="0.0" y="116" width="375" height="487"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" textLabel="3X1-FY-ngf" style="IBUITableViewCellStyleDefault" id="QGz-pr-zWc">
@@ -579,7 +618,18 @@
                             <constraint firstAttribute="trailing" secondItem="HXr-R0-5cI" secondAttribute="trailing" id="Zb5-If-dsp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="RuL-ob-9Gn"/>
+                    <navigationItem key="navigationItem" id="RuL-ob-9Gn">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="J21-8F-CiL">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Home"/>
+                            <connections>
+                                <segue destination="QCk-vS-Ueu" kind="show" id="8Xe-8f-qHW"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="gDc-Ea-evQ" id="lM7-2D-bEN"/>
                         <outlet property="tableView" destination="Blh-FX-u8u" id="rGV-dD-4y2"/>
@@ -588,9 +638,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6h8-b7-B67" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920.79999999999995" y="1066.4167916041979"/>
+            <point key="canvasLocation" x="921" y="783"/>
         </scene>
-        <!--Bird Detail-->
+        <!--Search Detail View Controller-->
         <scene sceneID="Pl7-QC-YJS">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="4ew-nn-p9V" customClass="SearchDetailViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -840,7 +890,18 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Bird Detail" id="hUy-Hb-0md"/>
+                    <navigationItem key="navigationItem" id="hUy-Hb-0md">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="miT-PV-Dxo">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Home"/>
+                            <connections>
+                                <segue destination="QCk-vS-Ueu" kind="show" id="hB0-lp-F1N"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoryLabel" destination="A6E-Bz-COG" id="OI5-xi-dQy"/>
                         <outlet property="commonNameLabel" destination="gdg-V6-SFG" id="Sbe-1e-69l"/>
@@ -871,9 +932,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ue-uH-pPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="1065.5172413793105"/>
+            <point key="canvasLocation" x="1932" y="782"/>
         </scene>
-        <!--Bird Log-->
+        <!--Bird Log View Controller-->
         <scene sceneID="KUK-9r-rwP">
             <objects>
                 <viewController id="X7z-N1-aUC" customClass="BirdLogViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -886,7 +947,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bU1-cq-VAb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="birdLogCell" textLabel="VWl-o2-CH2" detailTextLabel="REf-DU-vua" style="IBUITableViewCellStyleSubtitle" id="wb9-ua-6pO">
@@ -927,7 +988,17 @@
                             <constraint firstItem="bU1-cq-VAb" firstAttribute="top" secondItem="zb4-1f-GtY" secondAttribute="bottom" id="bn6-Vl-FiS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Bird Log" id="ghY-Ou-Jhn"/>
+                    <navigationItem key="navigationItem" id="ghY-Ou-Jhn">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B6K-iH-1hj">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Home"/>
+                            <connections>
+                                <segue destination="QCk-vS-Ueu" kind="show" id="1KL-wI-MQK"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="bU1-cq-VAb" id="p25-x4-5t1"/>
                         <outlet property="topNavigationBar" destination="ghY-Ou-Jhn" id="ZTz-AU-M5O"/>
@@ -937,7 +1008,7 @@
             </objects>
             <point key="canvasLocation" x="920.79999999999995" y="-653.52323838080963"/>
         </scene>
-        <!--Bird Tags-->
+        <!--Bird Log Detail View Controller-->
         <scene sceneID="RrU-u6-qDh">
             <objects>
                 <viewController id="cLa-8D-smx" customClass="BirdLogDetailViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -980,7 +1051,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Bird Tags" id="owF-aj-9cD"/>
+                    <navigationItem key="navigationItem" id="owF-aj-9cD">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tap-jc-aNz">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Home"/>
+                            <connections>
+                                <segue destination="QCk-vS-Ueu" kind="show" id="DuG-o9-l6S"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="TyE-p4-x0l" id="wyP-WW-y9V"/>
                         <outlet property="topNavigationBar" destination="owF-aj-9cD" id="6xa-89-BLb"/>
@@ -990,7 +1071,7 @@
             </objects>
             <point key="canvasLocation" x="1896.8" y="-653.52323838080963"/>
         </scene>
-        <!--Detail-->
+        <!--Bird Tag Detail View Controller-->
         <scene sceneID="AXi-FJ-VnV">
             <objects>
                 <viewController id="029-Ym-2Hu" customClass="BirdTagDetailViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -1043,7 +1124,18 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Ld0-EZ-saQ" secondAttribute="trailing" id="uMc-0f-8zz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="tcj-lA-f1e"/>
+                    <navigationItem key="navigationItem" id="tcj-lA-f1e">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TtO-R6-DJq">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Home"/>
+                            <connections>
+                                <segue destination="QCk-vS-Ueu" kind="show" id="Qdb-cO-MEb"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="Ld0-EZ-saQ" id="1lA-PP-uhQ"/>
                         <outlet property="birdNameLabel" destination="IPU-dg-tiQ" id="yVM-ye-g5e"/>
@@ -1056,7 +1148,7 @@
             </objects>
             <point key="canvasLocation" x="2796" y="-653.52323838080963"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Twitcher-->
         <scene sceneID="iJg-7N-gUJ">
             <objects>
                 <viewController id="47W-U1-tZR" customClass="HomeViewController" customModule="Twitcher_v2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -1069,89 +1161,118 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLS-L1-iuo">
-                                <rect key="frame" x="16" y="338" width="123" height="68"/>
+                                <rect key="frame" x="16" y="422" width="123" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <state key="normal" title="Bird Log"/>
+                                <connections>
+                                    <segue destination="X7z-N1-aUC" kind="show" id="d3L-VH-6uF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5n-cK-w1X">
-                                <rect key="frame" x="236" y="409" width="123" height="68"/>
+                                <rect key="frame" x="16" y="334" width="123" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
-                                <state key="normal" title="Filter"/>
+                                <state key="normal" title="Discover"/>
+                                <connections>
+                                    <segue destination="BLm-Ee-0nZ" kind="show" id="EUb-tX-2Bs"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search and browse Australian birds!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7E-jx-EPi">
-                                <rect key="frame" x="154" y="505" width="205" height="60"/>
+                                <rect key="frame" x="155" y="510" width="204" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4X-5q-fwj">
-                                <rect key="frame" x="16" y="501" width="123" height="68"/>
+                                <rect key="frame" x="16" y="506" width="123" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <segue destination="4gC-fy-PTt" kind="show" id="fjw-33-pvn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOa-mF-6HD">
-                                <rect key="frame" x="236" y="579" width="123" height="68"/>
+                                <rect key="frame" x="16" y="591" width="123" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <state key="normal" title="About Us"/>
+                                <connections>
+                                    <segue destination="1Ma-nx-nPN" kind="show" id="WHZ-N8-hXR"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Something about us!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfU-Kc-gfH">
-                                <rect key="frame" x="50" y="587" width="161" height="53"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfU-Kc-gfH">
+                                <rect key="frame" x="155" y="599" width="204" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="See how many birds you have tagged" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzO-nD-zjt">
-                                <rect key="frame" x="154" y="348" width="205" height="53"/>
+                                <rect key="frame" x="154" y="430" width="205" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's figure out what bird it is!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pS9-gy-RX4">
-                                <rect key="frame" x="16" y="417" width="212" height="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's figure out what bird it is!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dr-YC-DFF">
+                                <rect key="frame" x="154" y="342" width="205" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="114_1" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-Mf-ltB">
-                                <rect key="frame" x="0.0" y="64" width="375" height="222"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NvW-l0-ynD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="238"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="238" id="aLH-3O-YUp"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="AdF-AC-pp7" appends="YES" id="Wvx-Pu-ujQ"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="6UL-mK-e3H">
+                                <rect key="frame" x="168" y="310" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NvW-l0-ynD" firstAttribute="top" secondItem="pOr-g6-EYT" secondAttribute="bottom" id="4MH-tO-rTx"/>
+                            <constraint firstItem="6UL-mK-e3H" firstAttribute="centerX" secondItem="xct-f7-SCJ" secondAttribute="centerX" id="FJC-FI-IM1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NvW-l0-ynD" secondAttribute="trailing" constant="-16" id="FnC-ox-asN"/>
+                            <constraint firstItem="NvW-l0-ynD" firstAttribute="leading" secondItem="xct-f7-SCJ" secondAttribute="leadingMargin" constant="-16" id="ZZY-mA-p7r"/>
+                            <constraint firstItem="6UL-mK-e3H" firstAttribute="top" secondItem="NvW-l0-ynD" secondAttribute="bottom" id="xmu-Np-B3b"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="znK-cb-E89"/>
-                    <navigationItem key="navigationItem" id="I8y-XN-WQr">
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qcE-Mm-UGP">
-                            <rect key="frame" x="16.5" y="3.5" width="342" height="37"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
-                            <state key="normal" title="Welcome To Twitcher!"/>
-                        </button>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Twitcher" id="zkb-i9-x2o"/>
                     <connections>
                         <outlet property="aboutUsButton" destination="GOa-mF-6HD" id="KkB-aQ-jmG"/>
                         <outlet property="birdLogButton" destination="SLS-L1-iuo" id="3aZ-Ui-Ibb"/>
                         <outlet property="filterButton" destination="E5n-cK-w1X" id="XFE-ls-P58"/>
-                        <outlet property="navigationBar" destination="I8y-XN-WQr" id="3J6-x8-Pcx"/>
+                        <outlet property="homeScrollView" destination="NvW-l0-ynD" id="ttZ-Rx-qro"/>
+                        <outlet property="pageController" destination="6UL-mK-e3H" id="Poy-bV-HlC"/>
                         <outlet property="searchButton" destination="B4X-5q-fwj" id="6KM-3d-BVY"/>
-                        <outlet property="titleButton" destination="qcE-Mm-UGP" id="sl3-fx-I7M"/>
+                        <segue destination="4ew-nn-p9V" kind="show" identifier="homeToDetail" id="4rt-W8-EGg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OUb-Wa-NDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AdF-AC-pp7">
+                    <connections>
+                        <action selector="tapScrollView:" destination="47W-U1-tZR" id="gnC-Jq-oXh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-3353" y="1197"/>
+            <point key="canvasLocation" x="-1802.4000000000001" y="1235.5322338830586"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6oA-mr-ePB">
@@ -1163,16 +1284,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="2bS-2q-ihP" kind="relationship" relationship="viewControllers" id="C6n-04-Bi9"/>
-                        <segue destination="Nyc-VX-UfL" kind="relationship" relationship="viewControllers" id="O93-x7-OLF"/>
-                        <segue destination="Zk3-IX-PLx" kind="relationship" relationship="viewControllers" id="myo-Xo-0Zw"/>
-                        <segue destination="7yc-dN-xKW" kind="relationship" relationship="viewControllers" id="JCs-Na-LTB"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhh-jJ-8st" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2321" y="263"/>
+            <point key="canvasLocation" x="-5823" y="227"/>
         </scene>
         <!--About Us View Controller-->
         <scene sceneID="Td4-yZ-UVe">
@@ -1194,14 +1309,14 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXo-Y9-B3X">
                                                 <rect key="frame" x="16" y="8" width="343" height="467"/>
-                                                <mutableString key="text">The Twitcher App has been developed by the IQ”N”LS Team to help identify and discover Australian Birds. Through the functions of filtering, to identify birds or searching by bird names, kids (and their parents) can learn what bird they have seen and information about it, while also tagging birds that have been sighted.
+                                                <string key="text">The Twitcher App has been developed by the IQ”N”LS Team to help identify and discover Australian Birds. Through the functions of filtering, to identify birds or searching by bird names, kids (and their parents) can learn what bird they have seen and information about it, while also tagging birds that have been sighted.
 
 IQ”N”LS is a 5 member Monash University Industry Project Team, that has developed Twitcher for iOS. With consultation from our Industry Mentors, Carsales, the app has been designed to be used by 5 to 10 year old’s and aims to be a fun but educational tool that kids can use while in the great outdoors.
 
 Data Sources
 Bird details and descriptions: ©Nicole Bouglouan – www.oiseaux-birds.com
 Bird sounds: Xeno-Canto licenced under CC BY-NC-SA 4.0 - www.xeno-canto.org
-Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA 3.0 - https://en.wikipedia.org/wiki/List_of_birds_of_Australia</mutableString>
+Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA 3.0 - https://en.wikipedia.org/wiki/List_of_birds_of_Australia</string>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1235,6 +1350,14 @@ Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA
                     </view>
                     <navigationItem key="navigationItem" id="goc-ac-3X5">
                         <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="44e-I1-Lm7">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Home"/>
+                            <connections>
+                                <segue destination="QCk-vS-Ueu" kind="show" id="04q-Ac-hV1"/>
+                            </connections>
+                        </button>
                     </navigationItem>
                     <connections>
                         <outlet property="topNavigationBar" destination="goc-ac-3X5" id="0ae-5E-Fxd"/>
@@ -1242,7 +1365,7 @@ Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWa-4M-VIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920.79999999999995" y="1739.2803598200901"/>
+            <point key="canvasLocation" x="921" y="1545"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aob-n4-f9c">
@@ -1254,10 +1377,13 @@ Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="47W-U1-tZR" kind="relationship" relationship="rootViewController" id="7cp-dp-HRY"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akT-w4-Q1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2322" y="-618"/>
+            <point key="canvasLocation" x="-2274" y="220"/>
         </scene>
         <!--Search-->
         <scene sceneID="nPs-fE-G7F">
@@ -1270,13 +1396,10 @@ Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="4gC-fy-PTt" kind="relationship" relationship="rootViewController" id="2s5-6H-NEk"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKH-7a-Y5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18.399999999999999" y="1066.4167916041979"/>
+            <point key="canvasLocation" x="-4721" y="782"/>
         </scene>
         <!--Filter-->
         <scene sceneID="OFJ-Qe-7vz">
@@ -1289,13 +1412,10 @@ Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BLm-Ee-0nZ" kind="relationship" relationship="rootViewController" id="7LU-4j-i9P"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MpB-sO-Knv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18.399999999999999" y="263.11844077961024"/>
+            <point key="canvasLocation" x="-4721" y="63"/>
         </scene>
         <!--Bird Log-->
         <scene sceneID="gIW-Xm-3mc">
@@ -1308,13 +1428,10 @@ Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="X7z-N1-aUC" kind="relationship" relationship="rootViewController" id="4Tv-cw-S2J"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZ1-ek-9Cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18.399999999999999" y="-653.52323838080963"/>
+            <point key="canvasLocation" x="-4721" y="-654"/>
         </scene>
         <!--About Us-->
         <scene sceneID="vfc-gQ-Sm1">
@@ -1327,17 +1444,13 @@ Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1Ma-nx-nPN" kind="relationship" relationship="rootViewController" id="yUf-ar-7Ah"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMP-1I-qt0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18.399999999999999" y="1740.1799100449775"/>
+            <point key="canvasLocation" x="-4721" y="1456"/>
         </scene>
     </scenes>
     <resources>
-        <image name="114_1" width="500" height="334"/>
         <image name="about25" width="25" height="25"/>
         <image name="birdlog25" width="25" height="25"/>
         <image name="filter25" width="25" height="25"/>
@@ -1346,7 +1459,8 @@ Bird list: “List of birds of Australia” by Wikipedia licenced under CC BY-SA
         <image name="search25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iOO-pL-69a"/>
+        <segue reference="4rt-W8-EGg"/>
+        <segue reference="DuG-o9-l6S"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

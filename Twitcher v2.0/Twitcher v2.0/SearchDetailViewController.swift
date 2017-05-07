@@ -18,6 +18,8 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
     var player:AVAudioPlayer = AVAudioPlayer()
     var latitude = 0.0
     var longitude = 0.0
+    var currentPage = 0
+    var numberOfPages = 0
     
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var pictureScrollView: UIScrollView!
@@ -69,6 +71,14 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         loadBirdInfo()
         initAVPlayer()
         initTagButton()
+        autoScroll()
+        
+        
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        player.pause()
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,6 +97,23 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
             
             pictureScrollView.contentSize.width = pictureScrollView.frame.width * CGFloat( j + 1)
             pictureScrollView.addSubview(imageView)
+            numberOfPages += 1
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let myPageWidth = pictureScrollView.frame.width
+        let number = currentPage%numberOfPages
+        let page = pictureScrollView.contentOffset.x / pictureScrollView.frame.size.width
+        pageControl.currentPage = Int(page)
+        currentPage = Int(page)
+        if pictureScrollView.contentOffset.x > pictureScrollView.frame.size.width*CGFloat(numberOfPages-1) {
+            pictureScrollView.setContentOffset(CGPoint(x:myPageWidth*CGFloat(0), y:0), animated: true)
+            currentPage = 0
+        }
+        if pictureScrollView.contentOffset.x < 0 {
+            pictureScrollView.setContentOffset(CGPoint(x:myPageWidth*CGFloat(numberOfPages-1), y:0), animated: true)
+            currentPage -= 1
         }
     }
     
@@ -157,12 +184,14 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
             do {
                 playButton.isEnabled = true
                 try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath) as URL)
+                pauseButton.isEnabled = true
             }catch{
                 //ERROR
             }
         }else{
             playButton.isEnabled = false
-            playButton.setTitle("No Record", for: .normal)
+            playButton.setTitle("", for: .normal)
+            pauseButton.isEnabled = false
         }
     }
     
@@ -178,11 +207,11 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         tagButton.layer.cornerRadius = 0.1 * tagButton.bounds.size.width
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let page = pictureScrollView.contentOffset.x / pictureScrollView.frame.size.width
-        //pageControl.numberOfPages = imageArray.count
-        pageControl.currentPage = Int(page)
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let page = pictureScrollView.contentOffset.x / pictureScrollView.frame.size.width
+//        //pageControl.numberOfPages = imageArray.count
+//        pageControl.currentPage = Int(page)
+//    }
     
     @IBAction func play(_ sender: UIButton) {
         player.play()
@@ -235,7 +264,23 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         
     }
     
+    func autoScroll(){
+        let timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: Selector("scrollPages"), userInfo: nil, repeats: true)
+    }
     
+    func scrollToPage(number:Int){
+        let myPageWidth = pictureScrollView.frame.width
+        if number != 0 {
+            pictureScrollView.setContentOffset(CGPoint(x:myPageWidth*CGFloat(number), y:0), animated: true)
+        }else{
+            pictureScrollView.setContentOffset(CGPoint(x:myPageWidth*CGFloat(number), y:0), animated: false)
+        }
+    }
+    
+    func scrollPages(){
+        scrollToPage(number: currentPage%numberOfPages)
+        currentPage += 1
+    }
     
     
     
