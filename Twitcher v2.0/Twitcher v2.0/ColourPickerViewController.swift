@@ -11,6 +11,7 @@ import UIKit
 class ColourPickerViewController: UIViewController {
 
     
+    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var birdNumbers: UILabel!
     @IBOutlet weak var wereFound: UILabel!
     @IBOutlet weak var blueButton: UIButton!
@@ -33,6 +34,7 @@ class ColourPickerViewController: UIViewController {
     var screenHeight = CGFloat()
     var small = CGFloat()
     var big = CGFloat()
+    let generator = UIImpactFeedbackGenerator(style: .heavy)
     var options = [String]()
     let size = "xxx"
     let locations = [" ", " ", " ", " ", " ", " ", " ", " "]
@@ -41,18 +43,31 @@ class ColourPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Colour"
+        questionLabel.adjustsFontSizeToFitWidth = true
         updateBirdNumbers()
         let screenSize: CGRect = UIScreen.main.bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
-        if screenHeight/screenWidth > 1.5{
+        
+        switch screenWidth {
+        case 320:
+            small = 42.5
+            big = 83
+            initButtonsForSE()
+        case 375:
             small = 50
             big = 50*2
             initButtons()
-        }else{
+        case 414:
+            small = 55
+            big = 110
+            initButtonsForPlus()
+        case 768:
             small = screenWidth/10
             big = small*2
             initButtonsForIpad()
+        default:
+            print("")
         }
         //initButtons()
         cleanButtonWords()
@@ -166,9 +181,16 @@ class ColourPickerViewController: UIViewController {
         }else{
             wereFound.text = "bird was found!"
         }
+        
+        if numbers == 0{
+            topNavigationBar.rightBarButtonItem?.isEnabled = false
+        }else{
+            topNavigationBar.rightBarButtonItem?.isEnabled = true
+        }
     }
     
     func updateOptions(button:UIButton, colour:String){
+        generator.impactOccurred()
         let radius = button.frame.width
         if radius == small{
             enlarge(button: button)
@@ -235,6 +257,98 @@ class ColourPickerViewController: UIViewController {
         tanButton.backgroundColor = UIColor(red: 210/255, green: 180/255, blue: 140/255, alpha: 1)
     }
     
+    func initButtonsForPlus(){
+        blueButton.frame = CGRect(x: 46, y: 230, width: small, height: small)
+        makeCircle(button: blueButton)
+        blueButton.backgroundColor = UIColor(red: 0/255, green: 102/255, blue: 255/255, alpha: 1)
+        
+        blackButton.frame = CGRect(x: 170, y: 220, width: small, height: small)
+        makeCircle(button: blackButton)
+        blackButton.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        
+        brownButton.frame = CGRect(x: 286, y: 220, width: small, height: small)
+        makeCircle(button: brownButton)
+        brownButton.backgroundColor = UIColor(red: 139/255, green: 69/255, blue: 19/255, alpha: 1)
+        
+        greenButton.frame = CGRect(x: 230, y: 315, width: small, height: small)
+        makeCircle(button: greenButton)
+        greenButton.backgroundColor = UIColor(red: 0/255, green: 128/255, blue: 0/255, alpha: 1)
+        
+        greyButton.frame = CGRect(x: 160, y: 430, width: small, height: small)
+        makeCircle(button: greyButton)
+        greyButton.backgroundColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
+        
+        pinkButton.frame = CGRect(x: 270, y: 430, width: small, height: small)
+        makeCircle(button: pinkButton)
+        pinkButton.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255, alpha: 1)
+        
+        redButton.frame = CGRect(x: 60, y: 460, width: small, height: small)
+        makeCircle(button: redButton)
+        redButton.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+        
+        whiteButton.frame = CGRect(x: 170, y: 530, width: small, height: small)
+        makeCircle(button: whiteButton)
+        whiteButton.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
+        
+        yellowButton.frame = CGRect(x: 93, y: 600, width: small, height: small)
+        makeCircle(button: yellowButton)
+        yellowButton.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 0/255, alpha: 1)
+        
+        orangeButton.frame = CGRect(x: 110, y: 335, width: small, height: small)
+        makeCircle(button: orangeButton)
+        orangeButton.backgroundColor = UIColor(red: 255/255, green: 165/255, blue: 0/255, alpha: 1)
+        
+        tanButton.frame = CGRect(x: 250, y: 600, width: small, height: small)
+        makeCircle(button: tanButton)
+        tanButton.backgroundColor = UIColor(red: 210/255, green: 180/255, blue: 140/255, alpha: 1)
+    }
+    
+    func initButtonsForSE(){
+        blueButton.frame = CGRect(x: 46, y: 230, width: small, height: small)
+        makeCircle(button: blueButton)
+        blueButton.backgroundColor = UIColor(red: 0/255, green: 102/255, blue: 255/255, alpha: 1)
+        
+        blackButton.frame = CGRect(x: 140, y: 220, width: small, height: small)
+        makeCircle(button: blackButton)
+        blackButton.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        
+        brownButton.frame = CGRect(x: 240, y: 220, width: small, height: small)
+        makeCircle(button: brownButton)
+        brownButton.backgroundColor = UIColor(red: 139/255, green: 69/255, blue: 19/255, alpha: 1)
+        
+        greenButton.frame = CGRect(x: 210, y: 300, width: small, height: small)
+        makeCircle(button: greenButton)
+        greenButton.backgroundColor = UIColor(red: 0/255, green: 128/255, blue: 0/255, alpha: 1)
+        
+        greyButton.frame = CGRect(x: 160, y: 360, width: small, height: small)
+        makeCircle(button: greyButton)
+        greyButton.backgroundColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
+        
+        pinkButton.frame = CGRect(x: 250, y: 400, width: small, height: small)
+        makeCircle(button: pinkButton)
+        pinkButton.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255, alpha: 1)
+        
+        redButton.frame = CGRect(x: 60, y: 400, width: small, height: small)
+        makeCircle(button: redButton)
+        redButton.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+        
+        whiteButton.frame = CGRect(x: 160, y: 435, width: small, height: small)
+        makeCircle(button: whiteButton)
+        whiteButton.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
+        
+        yellowButton.frame = CGRect(x: 93, y: 500, width: small, height: small)
+        makeCircle(button: yellowButton)
+        yellowButton.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 0/255, alpha: 1)
+        
+        orangeButton.frame = CGRect(x: 100, y: 310, width: small, height: small)
+        makeCircle(button: orangeButton)
+        orangeButton.backgroundColor = UIColor(red: 255/255, green: 165/255, blue: 0/255, alpha: 1)
+        
+        tanButton.frame = CGRect(x: 220, y: 500, width: small, height: small)
+        makeCircle(button: tanButton)
+        tanButton.backgroundColor = UIColor(red: 210/255, green: 180/255, blue: 140/255, alpha: 1)
+    }
+    
     func initButtonsForIpad(){
         blueButton.frame = CGRect(x: small*1.5, y: small*3, width: small, height: small)
         makeCircle(button: blueButton)
@@ -256,27 +370,27 @@ class ColourPickerViewController: UIViewController {
         makeCircle(button: greyButton)
         greyButton.backgroundColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
         
-        pinkButton.frame = CGRect(x: small*4.5, y: small*6.5, width: small, height: small)
+        pinkButton.frame = CGRect(x: small*2.5, y: small*5.5, width: small, height: small)
         makeCircle(button: pinkButton)
         pinkButton.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255, alpha: 1)
         
-        redButton.frame = CGRect(x: small*7, y: small*6.5, width: small, height: small)
+        redButton.frame = CGRect(x: small*7, y: small*7.5, width: small, height: small)
         makeCircle(button: redButton)
         redButton.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
         
-        whiteButton.frame = CGRect(x: small*6, y: small*8.5, width: small, height: small)
+        whiteButton.frame = CGRect(x: small*5, y: small*9, width: small, height: small)
         makeCircle(button: whiteButton)
         whiteButton.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
         
-        yellowButton.frame = CGRect(x: small*3.5, y: small*10, width: small, height: small)
+        yellowButton.frame = CGRect(x: small*3, y: small*11, width: small, height: small)
         makeCircle(button: yellowButton)
         yellowButton.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 0/255, alpha: 1)
         
-        orangeButton.frame = CGRect(x: small*5.5, y: small*10, width: small, height: small)
+        orangeButton.frame = CGRect(x: small*6, y: small*11, width: small, height: small)
         makeCircle(button: orangeButton)
         orangeButton.backgroundColor = UIColor(red: 255/255, green: 165/255, blue: 0/255, alpha: 1)
         
-        tanButton.frame = CGRect(x: small*3.5, y: small*8, width: small, height: small)
+        tanButton.frame = CGRect(x: small*4, y: small*7, width: small, height: small)
         makeCircle(button: tanButton)
         tanButton.backgroundColor = UIColor(red: 210/255, green: 180/255, blue: 140/255, alpha: 1)
     }

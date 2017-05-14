@@ -537,6 +537,47 @@ class Filter{
         return newDate
     }
     
+    class func displayTime(date:String) ->String{
+        var newTime = ""
+        
+        var hour = ""
+        var minute = ""
+        var second = ""
+        
+        if date != ""{
+            hour = date.substring(with: 8..<10)
+            minute = date.substring(with: 10..<12)
+            second = date.substring(with: 12..<14)
+        }
+        
+        newTime = "\(hour) : \(minute) : \(second)"
+        
+        return newTime
+    }
+    
+    class func morningOrAfternoon(date:String) ->String{
+        var morningOrAfternoon = ""
+        let hour = date.substring(with: 8..<10)
+        switch hour{
+            case "12":
+                morningOrAfternoon = "Noon"
+            case "13", "14","15","16","17":
+                morningOrAfternoon = "Afternoon"
+            case "18", "19","20":
+                morningOrAfternoon = "Evening"
+            case "21", "22","23":
+                morningOrAfternoon = "Night"
+            case "24":
+                morningOrAfternoon = "Midnight"
+            case "00", "01","02","03":
+                morningOrAfternoon = "Late Night"
+            default:
+                morningOrAfternoon = "Morning"
+        }
+        
+        return morningOrAfternoon
+    }
+    
     class func ordinal(aInt:Int) -> String{
         return aInt.ordinal
     }

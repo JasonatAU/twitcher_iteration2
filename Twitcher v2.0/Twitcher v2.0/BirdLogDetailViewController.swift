@@ -34,8 +34,8 @@ class BirdLogDetailViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "birdLogDetailCell")!
         let birdTag = birdTags[indexPath.row]
-        //cell.textLabel?.text = "\(bird!.index), No.\(indexPath.row),latitude: \(birdTag.latitude), longitude:\(birdTag.longitude), date: \(birdTag.date)"
-        cell.textLabel?.text = "Number \(indexPath.row + 1): Found on \(Filter.displayDate(date:birdTag.date!))"
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
+        cell.textLabel?.text = "No. \(indexPath.row + 1): Found on \(Filter.displayDate(date:birdTag.date!)), \(Filter.morningOrAfternoon(date: birdTag.date!))"
         return cell
     }
     

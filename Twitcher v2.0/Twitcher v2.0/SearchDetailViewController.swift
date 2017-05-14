@@ -12,7 +12,7 @@ import AVFoundation
 import CoreLocation
 import MapKit
 
-class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerDelegate {
+class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerDelegate, AVAudioPlayerDelegate {
 
     var bird:Bird? = nil
     var player:AVAudioPlayer = AVAudioPlayer()
@@ -20,6 +20,10 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
     var longitude = 0.0
     var currentPage = 0
     var numberOfPages = 0
+    var haveAudio = false
+    var isPlaying = false
+    var screenWidth = CGFloat()
+    var screenHeight = CGFloat()
     
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var pictureScrollView: UIScrollView!
@@ -32,9 +36,7 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
     @IBOutlet weak var scientificNameLabel: UILabel!
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var minLengthLabel: UILabel!
-    @IBOutlet weak var maxLengthLabel: UILabel!
     @IBOutlet weak var minWeightLabel: UILabel!
-    @IBOutlet weak var maxWeightLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -47,13 +49,12 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
     @IBOutlet weak var familyLabel: UILabel!
     
     
-    
-    
     @IBOutlet weak var topNavigationBar: UINavigationItem!
     @IBOutlet weak var pageControl: UIPageControl!
     
     let manager = CLLocationManager()
     var imageArray = [UIImage]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +64,9 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-        
         pictureScrollView.delegate = self
+        initScreenSize()
+        initScrollViewHeight()
         loadBIrd()
         addPicturesToScrollView()
         pageControl.numberOfPages = imageArray.count
@@ -74,11 +76,12 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         autoScroll()
         
         
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        player.pause()
+        if haveAudio{
+            player.pause()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,16 +89,36 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
     }
     
     func addPicturesToScrollView(){
-        pictureScrollView.frame = view.frame
+        //pictureScrollView.frame = view.frame
+        
+        var width = CGFloat()
+        var height = CGFloat()
+        
+        switch screenWidth {
+        case 320:
+            width = 320
+            height = 213
+        case 375:
+            width = 375
+            height = 250
+        case 414:
+            width = 414
+            height = 276
+        case 768:
+            width = 768
+            height = 512
+        default:
+            print("")
+        }
         
         for j in 0..<imageArray.count{
             let imageView = UIImageView()
             imageView.image = imageArray[j]
             imageView.contentMode = .scaleToFill
             let xPosition = self.view.frame.width * CGFloat(j)
-            imageView.frame = CGRect(x: xPosition, y: 0, width: self.pictureScrollView.frame.width, height: 250)//self.pictureScrollView.frame.height)
+            imageView.frame = CGRect(x: xPosition, y: 0, width: width, height: height)//self.pictureScrollView.frame.height)
             
-            pictureScrollView.contentSize.width = pictureScrollView.frame.width * CGFloat( j + 1)
+            pictureScrollView.contentSize.width = width * CGFloat( j + 1)
             pictureScrollView.addSubview(imageView)
             numberOfPages += 1
         }
@@ -130,7 +153,6 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         }
         
         if imageArray.isEmpty {
-            print(imageArray.count)
             if let defaultImage = UIImage(named: "noImage"){
                 imageArray.append(defaultImage)
                 print("add default picture succeeded")
@@ -144,27 +166,22 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         commonNameLabel.text = Filter.captitaliseFirstCharacter(aString: bird!.commonName!)
         scientificNameLabel.text = Filter.captitaliseFirstCharacter(aString: bird!.scientificName!)
         sizeLabel.text = "Size"
+        
         if bird!.minLength != 0{
-            minLengthLabel.text = "Min Length: \(bird!.minLength) cm"
+            if bird!.maxLength != 500{
+                minLengthLabel.text = "Length: \(bird!.minLength) to \(bird!.maxLength) cm"
+            }
         }else{
-            minLengthLabel.text = "Min Length: no value"
-        }
-        if bird!.maxLength != 500{
-            maxLengthLabel.text = "Max Length: \(bird!.maxLength) cm"
-        }else{
-            maxLengthLabel.text = "Max Length: no value"
-        }
-        if bird!.minWeight != 0{
-            minWeightLabel.text = "Min Weight: \(bird!.minWeight) g"
-        }else{
-            minWeightLabel.text = "Min Weight: no value"
-        }
-        if bird!.maxWeight != 100000{
-            maxWeightLabel.text = "Max Weight: \(bird!.maxWeight) g"
-        }else{
-            maxWeightLabel.text = "Max Weight: no value"
+            minLengthLabel.text = "Length: no value"
         }
         
+        if bird!.minWeight != 0{
+            if bird!.maxWeight != 100000{
+                minWeightLabel.text = "Weight: \(bird!.minWeight) to \(bird!.maxWeight) g"
+            }
+        }else{
+            minWeightLabel.text = "Weight: no value"
+        }
         
         locationLabel.text = "Locations"
         stateLabel.text = bird!.colour2?.uppercased()
@@ -172,7 +189,7 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         descriptionInfoLabel.text = bird!.birdDescription
         dietLabel.text = "Diet"
         dietInfoLabel.text = bird!.diet
-        taxonomyLabel.text = "Taxonomy"
+        taxonomyLabel.text = "Sorting & Classifying (Taxonomy)"
         categoryLabel.text = "Category: \(bird!.category!)"
         orderLabel.text = "Order: \(bird!.order!) "
         familyLabel.text = "Family: \(bird!.family!) "
@@ -184,14 +201,25 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
             do {
                 playButton.isEnabled = true
                 try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath) as URL)
+                player.delegate = self
                 pauseButton.isEnabled = true
+                
+                if let playImage = UIImage(named: "ic_play_arrow"){
+                    pauseButton.setImage(playImage, for: .normal)
+                }
+                
+                haveAudio = true
             }catch{
                 //ERROR
             }
         }else{
+            if let pauseImage = UIImage(named: "ic_pause_2x"){
+                pauseButton.setImage(pauseImage, for: .normal)
+            }
             playButton.isEnabled = false
             playButton.setTitle("", for: .normal)
             pauseButton.isEnabled = false
+            haveAudio = false
         }
     }
     
@@ -214,16 +242,41 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
 //    }
     
     @IBAction func play(_ sender: UIButton) {
-        player.play()
+        
+        if isPlaying{
+            isPlaying = false
+            player.pause()
+            if let playImage = UIImage(named: "ic_play_arrow"){
+                pauseButton.setImage(playImage, for: .normal)
+            }
+        }else{
+            isPlaying = true
+            player.play()
+            if let pauseImage = UIImage(named: "ic_pause_2x"){
+                pauseButton.setImage(pauseImage, for: .normal)
+            }
+        }
     }
     
     @IBAction func pause(_ sender: UIButton) {
-        player.pause()
+        if isPlaying{
+            isPlaying = false
+            player.pause()
+            if let playImage = UIImage(named: "ic_play_arrow"){
+                pauseButton.setImage(playImage, for: .normal)
+            }
+        }else{
+            isPlaying = true
+            player.play()
+            if let pauseImage = UIImage(named: "ic_pause_2x"){
+                pauseButton.setImage(pauseImage, for: .normal)
+            }
+        }
     }
     @IBAction func tagButtonTapped(_ sender: UIButton) {
         
         let birdTags = Filter.filterTagByIndex(birdIndex: Int((bird?.index)!)).count
-        let alert = UIAlertController(title: "Add Bird Tag", message: "Would you like to tag \(Filter.aOrAn(name: (bird?.commonName)!)) \(Filter.captitaliseFirstCharacter(aString: (bird?.commonName)!))?\nThis is the \(Filter.ordinal(aInt: birdTags+1)) time you tag it!", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Add Bird Tag", message: "Would you like to tag \(Filter.aOrAn(name: (bird?.commonName)!)) \(Filter.captitaliseFirstCharacter(aString: (bird?.commonName)!))?\nThis will be the \(Filter.ordinal(aInt: birdTags+1)) time you tag it!", preferredStyle: UIAlertControllerStyle.alert)
         
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: { action in
@@ -282,17 +335,37 @@ class SearchDetailViewController: UIViewController, UIScrollViewDelegate, CLLoca
         currentPage += 1
     }
     
+    func initScreenSize(){
+        let screenSize: CGRect = UIScreen.main.bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        print(screenWidth)
+        print(screenHeight)
+    }
     
+    func initScrollViewHeight(){
+        
+        switch screenWidth {
+        case 320:
+            NSLayoutConstraint(item: pictureScrollView, attribute: .height, relatedBy: .equal, toItem: view, attribute:.height, multiplier: 240/568, constant:0.0).isActive = true
+        case 375:
+            NSLayoutConstraint(item: pictureScrollView, attribute: .height, relatedBy: .equal, toItem: view, attribute:.height, multiplier: 280/667, constant:0.0).isActive = true
+        case 414:
+            NSLayoutConstraint(item: pictureScrollView, attribute: .height, relatedBy: .equal, toItem: view, attribute:.height, multiplier: 310/736, constant:0.0).isActive = true
+        case 768:
+            NSLayoutConstraint(item: pictureScrollView, attribute: .height, relatedBy: .equal, toItem: view, attribute:.height, multiplier: 560/1024, constant:0.0).isActive = true
+        default:
+            print("")
+        }
+
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        isPlaying = false
+        if let playImage = UIImage(named: "ic_play_arrow"){
+            pauseButton.setImage(playImage, for: .normal)
+        }
+    }
     
     
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class LocationPickerViewController: UIViewController {
 
+    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var wereFound: UILabel!
     @IBOutlet weak var birdNumbers: UILabel!
     @IBOutlet weak var actButton: UIButton!
@@ -27,7 +28,7 @@ class LocationPickerViewController: UIViewController {
     var screenWidth = CGFloat()
     var screenHeight = CGFloat()
     var diameter = CGFloat()
-    
+    let generator = UIImpactFeedbackGenerator(style: .heavy)
     var options = [String]()
     var size = ""
     var locations = [String]()
@@ -37,17 +38,30 @@ class LocationPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Location"
+        questionLabel.adjustsFontSizeToFitWidth = true
+        
         let screenSize: CGRect = UIScreen.main.bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
         diameter = screenWidth*0.25
-        if screenHeight/screenWidth < 1.5{
-            initButtonsForIpad()
-        }else{
+        
+        switch screenWidth {
+        case 320:
+            diameter = screenWidth*0.25
+            initButtonsForSE()
+        case 375:
             diameter = screenWidth*0.2
             initButtons()
+        case 414:
+            diameter = screenWidth*0.25
+            initButtonsForPlus()
+        case 768:
+            diameter = screenWidth*0.25
+            initButtonsForIpad()
+        default:
+            print("")
         }
-        initButtons()
+        
         initLocation()
         updateBirdNumbers()
     }
@@ -79,6 +93,7 @@ class LocationPickerViewController: UIViewController {
     }
     
     func updateBirdNumbers(){
+        generator.impactOccurred()
         var tempLocation = locations
         if tempLocation.count != 8{
             for i in 1...(8-tempLocation.count){
@@ -92,6 +107,11 @@ class LocationPickerViewController: UIViewController {
             wereFound.text = "birds were found!"
         }else{
             wereFound.text = "bird was found!"
+        }
+        if numbers == 0{
+            topNavigationBar.rightBarButtonItem?.isEnabled = false
+        }else{
+            topNavigationBar.rightBarButtonItem?.isEnabled = true
         }
     }
     
@@ -158,6 +178,74 @@ class LocationPickerViewController: UIViewController {
         
         waButton.backgroundColor = notSelectedButtonColour
         waButton.frame = CGRect(x: waButton.frame.origin.x, y: waButton.frame.origin.y, width: diameter, height: diameter)
+        makeCircle(button: waButton)
+    }
+    
+    func initButtonsForPlus(){
+        actButton.backgroundColor = notSelectedButtonColour
+        actButton.frame = CGRect(x: diameter*0.4, y: diameter*2.5, width: diameter, height: diameter)
+        makeCircle(button: actButton)
+        
+        nswButton.backgroundColor = notSelectedButtonColour
+        nswButton.frame = CGRect(x: diameter*0.4, y: diameter*4, width: diameter, height: diameter)
+        makeCircle(button: nswButton)
+        
+        ntButton.backgroundColor = notSelectedButtonColour
+        ntButton.frame = CGRect(x: diameter*0.4, y: diameter*5.5, width: diameter, height: diameter)
+        makeCircle(button: ntButton)
+        
+        qldButton.backgroundColor = notSelectedButtonColour
+        qldButton.frame = CGRect(x: diameter*1.5, y: diameter*3.3, width: diameter, height: diameter)
+        makeCircle(button: qldButton)
+        
+        saButton.backgroundColor = notSelectedButtonColour
+        saButton.frame = CGRect(x: diameter*1.5, y: diameter*4.7, width: diameter, height: diameter)
+        makeCircle(button: saButton)
+        
+        tasButton.backgroundColor = notSelectedButtonColour
+        tasButton.frame = CGRect(x: diameter*2.5, y: diameter*2.5, width: diameter, height: diameter)
+        makeCircle(button: tasButton)
+        
+        vicButton.backgroundColor = notSelectedButtonColour
+        vicButton.frame = CGRect(x: diameter*2.5, y: diameter*4, width: diameter, height: diameter)
+        makeCircle(button: vicButton)
+        
+        waButton.backgroundColor = notSelectedButtonColour
+        waButton.frame = CGRect(x: diameter*2.5, y: diameter*5.5, width: diameter, height: diameter)
+        makeCircle(button: waButton)
+    }
+    
+    func initButtonsForSE(){
+        actButton.backgroundColor = notSelectedButtonColour
+        actButton.frame = CGRect(x: diameter*0.4, y: diameter*2.7, width: diameter, height: diameter)
+        makeCircle(button: actButton)
+        
+        nswButton.backgroundColor = notSelectedButtonColour
+        nswButton.frame = CGRect(x: diameter*0.4, y: diameter*4.2, width: diameter, height: diameter)
+        makeCircle(button: nswButton)
+        
+        ntButton.backgroundColor = notSelectedButtonColour
+        ntButton.frame = CGRect(x: diameter*0.4, y: diameter*5.7, width: diameter, height: diameter)
+        makeCircle(button: ntButton)
+        
+        qldButton.backgroundColor = notSelectedButtonColour
+        qldButton.frame = CGRect(x: diameter*1.5, y: diameter*3.5, width: diameter, height: diameter)
+        makeCircle(button: qldButton)
+        
+        saButton.backgroundColor = notSelectedButtonColour
+        saButton.frame = CGRect(x: diameter*1.5, y: diameter*4.8, width: diameter, height: diameter)
+        makeCircle(button: saButton)
+        
+        tasButton.backgroundColor = notSelectedButtonColour
+        tasButton.frame = CGRect(x: diameter*2.5, y: diameter*2.7, width: diameter, height: diameter)
+        makeCircle(button: tasButton)
+        
+        vicButton.backgroundColor = notSelectedButtonColour
+        vicButton.frame = CGRect(x: diameter*2.5, y: diameter*4.2, width: diameter, height: diameter)
+        makeCircle(button: vicButton)
+        
+        waButton.backgroundColor = notSelectedButtonColour
+        waButton.frame = CGRect(x: diameter*2.5, y: diameter*5.7, width: diameter, height: diameter)
         makeCircle(button: waButton)
     }
     

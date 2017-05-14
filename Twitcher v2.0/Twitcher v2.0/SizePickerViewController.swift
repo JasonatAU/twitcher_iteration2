@@ -12,6 +12,7 @@ import MapKit
 
 class SizePickerViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var wereFound: UILabel!
     @IBOutlet weak var birdNumbers: UILabel!
     @IBOutlet weak var smallButton: UIButton!
@@ -27,6 +28,7 @@ class SizePickerViewController: UIViewController, CLLocationManagerDelegate {
     var screenWidth = CGFloat()
     var screenHeight = CGFloat()
     var diameter = CGFloat()
+    let generator = UIImpactFeedbackGenerator(style: .heavy)
     
     let selectedButtonColour = UIColor(red: 255/255, green: 47/255, blue: 66/255, alpha: 1)
     let notSelectedButtonColour = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
@@ -41,15 +43,33 @@ class SizePickerViewController: UIViewController, CLLocationManagerDelegate {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         updateNumbers()
         self.title = "Size"
+        questionLabel.adjustsFontSizeToFitWidth = true
+        likeWhatLabel.adjustsFontSizeToFitWidth = true
+        mediumButton.titleLabel?.adjustsFontSizeToFitWidth = true
         let screenSize: CGRect = UIScreen.main.bounds
         screenWidth = screenSize.width
         screenHeight = screenSize.height
         diameter = screenWidth*0.3
-        if screenHeight/screenWidth < 1.5{
-            initButtonsForIpad()
-        }else{
+        
+        switch screenWidth {
+        case 320:
+            initButtonsForSE()
+        case 375:
             initButtons()
+        case 414:
+            initButtons()
+        case 768:
+            initButtonsForIpad()
+        default:
+            print("")
         }
+        
+        
+//        if screenHeight/screenWidth < 1.5{
+//            initButtonsForIpad()
+//        }else{
+//            initButtons()
+//        }
         likeWhatLabel.text = "Just Like a Bird!"
     }
     
@@ -171,6 +191,7 @@ class SizePickerViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func updateNumbers(){
+        generator.impactOccurred()
         let birds = Filter.filter(colours: options, size: size, locations: locations)
         let numbers = birds.count
         birdNumbers.text = "\(numbers) "
@@ -178,6 +199,11 @@ class SizePickerViewController: UIViewController, CLLocationManagerDelegate {
             wereFound.text = "birds were found!"
         }else{
             wereFound.text = "bird was found!"
+        }
+        if numbers == 0{
+            topNavigationBar.rightBarButtonItem?.isEnabled = false
+        }else{
+            topNavigationBar.rightBarButtonItem?.isEnabled = true
         }
     }
     
@@ -195,6 +221,24 @@ class SizePickerViewController: UIViewController, CLLocationManagerDelegate {
         hugeButton.backgroundColor = notSelectedButtonColour
         makeCircle(button: hugeButton)
         doNotKnowButton.frame = CGRect(x: diameter/3*3.5, y: diameter*3.5, width: diameter, height: diameter)
+        doNotKnowButton.backgroundColor = notSelectedButtonColour
+        makeCircle(button: doNotKnowButton)
+    }
+    
+    func initButtonsForSE(){
+        smallButton.frame = CGRect(x: diameter/3, y: diameter*2.9, width: diameter, height: diameter)
+        smallButton.backgroundColor = notSelectedButtonColour
+        makeCircle(button: smallButton)
+        mediumButton.frame = CGRect(x: diameter*2, y: diameter*2.9, width: diameter, height: diameter)
+        mediumButton.backgroundColor = notSelectedButtonColour
+        makeCircle(button: mediumButton)
+        largeButton.frame = CGRect(x: diameter/3, y: diameter*4.4, width: diameter, height: diameter)
+        largeButton.backgroundColor = notSelectedButtonColour
+        makeCircle(button: largeButton)
+        hugeButton.frame = CGRect(x: diameter*2, y: diameter*4.4, width: diameter, height: diameter)
+        hugeButton.backgroundColor = notSelectedButtonColour
+        makeCircle(button: hugeButton)
+        doNotKnowButton.frame = CGRect(x: diameter/3*3.5, y: diameter*3.65, width: diameter, height: diameter)
         doNotKnowButton.backgroundColor = notSelectedButtonColour
         makeCircle(button: doNotKnowButton)
     }
